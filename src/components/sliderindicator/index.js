@@ -8,7 +8,7 @@ const AnimatedFlatList = props => {
   const [parentWidth, setParentWidth] = React.useState(0);
 
   // calculate indicator active width based on data length
-  const indicatorActiveWidth = 25;
+  const indicatorActiveWidth = 45;
 
   const scrollPerc =
     (contentOffset.x / (contentSize - parentWidth)) *
@@ -28,7 +28,6 @@ const AnimatedFlatList = props => {
           setParentWidth(e.nativeEvent.layout.width);
         }}
       />
-      <View></View>
       <View style={styles.indicatorContainer}>
         <View style={styles.indicatorBackground}>
           <Animated.View

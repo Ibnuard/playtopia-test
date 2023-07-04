@@ -80,6 +80,14 @@ const styles = StyleSheet.create({
     marginTop: Scaler.scaleSize(32),
   },
 
+  promoListContainer: {
+    marginTop: Size.SIZE_12,
+  },
+
+  scrollContainer: {
+    paddingBottom: Scaler.scaleSize(60),
+  },
+
   // text styles
 
   textHi: {

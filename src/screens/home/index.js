@@ -1,5 +1,13 @@
 import * as React from 'react';
-import {View, Text, Image, StatusBar, FlatList, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StatusBar,
+  FlatList,
+  Dimensions,
+  ScrollView,
+} from 'react-native';
 import styles from './styles';
 import {IMAGES_RES} from '../../utils/images';
 import {
@@ -106,11 +114,12 @@ const HomeScreen = () => {
     return (
       <View style={styles.infopromoContainer}>
         <Text style={styles.textSubtitle}>Info & Promo</Text>
-        <FlatList
+        <AnimatedFlatList
+          containerStyle={styles.promoListContainer}
           horizontal
+          pagingEnabled
           data={data_car}
           renderItem={({item, index}) => <PromoItem />}
-          pagingEnabled
         />
       </View>
     );
@@ -126,8 +135,13 @@ const HomeScreen = () => {
       />
       {_renderBackground()}
       {_renderTopContainer()}
-      {_renderCardContainer()}
-      {_renderPromoInfo()}
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContainer}>
+        {_renderCardContainer()}
+        {_renderPromoInfo()}
+        {_renderPromoInfo()}
+      </ScrollView>
     </View>
   );
 };
