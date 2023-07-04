@@ -41,19 +41,23 @@ const TabBar = ({state, descriptors, navigation}) => {
         const getIcon = () => {
           switch (route.name) {
             case 'HomeStack':
-              return IMAGES_RES.tabIcon['home'];
+              return IMAGES_RES.tabIcon[isFocused ? 'home' : 'home_inactive'];
               break;
             case 'OrderStack':
-              return IMAGES_RES.tabIcon['order'];
+              return IMAGES_RES.tabIcon[isFocused ? 'order' : 'order_inactive'];
               break;
             case 'PlaycardStack':
               return IMAGES_RES.tabIcon['playcard'];
               break;
             case 'OutletStack':
-              return IMAGES_RES.tabIcon['outlet'];
+              return IMAGES_RES.tabIcon[
+                isFocused ? 'outlet' : 'outlet_inactive'
+              ];
               break;
             case 'AccountStack':
-              return IMAGES_RES.tabIcon['account'];
+              return IMAGES_RES.tabIcon[
+                isFocused ? 'account' : 'account_inactive'
+              ];
               break;
             default:
               break;

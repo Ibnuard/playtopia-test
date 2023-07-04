@@ -13,10 +13,14 @@ export const IMAGES_RES = {
   searchPlus: require('../../assets/images/searchPlus.png'),
   banner: require('../../assets/images/banner1.png'),
   tabIcon: {
-    home: require('../../assets/images/ic_home_inactive.png'),
-    order: require('../../assets/images/ic_order_inactive.png'),
+    home: require('../../assets/images/ic_home_active.png'),
+    home_inactive: require('../../assets/images/ic_home_inactive.png'),
+    order: require('../../assets/images/ic_order_active.png'),
+    order_inactive: require('../../assets/images/ic_order_inactive.png'),
     playcard: require('../../assets/images/ic_playcard.png'),
-    outlet: require('../../assets/images/ic_outlet_inactive.png'),
-    account: require('../../assets/images/ic_account_inactive.png'),
+    outlet: require('../../assets/images/ic_outlet_active.png'),
+    outlet_inactive: require('../../assets/images/ic_outlet_inactive.png'),
+    account: require('../../assets/images/ic_account_active.png'),
+    account_inactive: require('../../assets/images/ic_account_inactive.png'),
   },
 };
