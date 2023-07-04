@@ -1,12 +1,10 @@
-import { StyleSheet } from "react-native";
-import { Typo } from "../../styles";
-
+import {StyleSheet} from 'react-native';
+import {Typo} from '../../styles';
 
 const styles = StyleSheet.create({
-    textCaption: {
-        ...Typo.TextLargeBold,
-        color: 'red'
-    }
-})
+  textCaption: {
+    color: 'red',
+  },
+});
 
-export default styles
+export default styles;

@@ -44,22 +44,21 @@ const styles = StyleSheet.create({
 
   //text style
   textTitle: {
-    ...Typo.TextNormalRegular,
-    color: Colors.COLOR_WHITE,
+    ...Typo.TypoStyle('normal'),
   },
 
   textTitleInactive: {
-    ...Typo.TextNormalRegular,
+    ...Typo.TypoStyle('normal'),
     color: Colors.COLOR_DARK_GRAY,
   },
 
   textTitleInvert: {
-    ...Typo.TextNormalRegular,
+    ...Typo.TypoStyle('normal'),
     color: Colors.COLOR_ACCENT,
   },
 
   textTitleInvertInactive: {
-    ...Typo.TextNormalRegular,
+    ...Typo.TypoStyle('normal'),
     color: Colors.COLOR_DARK_GRAY,
   },
 });

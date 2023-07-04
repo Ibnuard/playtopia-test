@@ -21,7 +21,7 @@ const LoginScreen = ({navigation}) => {
     <View style={styles.container}>
       <Text>LoginScreen</Text>
       <Button
-        title="Go to main screen"
+        title="Go to main screen kuy"
         upperCase={false}
         isLoading={false}
         disabled={false}

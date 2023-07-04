@@ -31,6 +31,12 @@
 		82C33C7E28FE683D00F15D41 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C33C6E28FE683D00F15D41 /* EvilIcons.ttf */; };
 		82C33C7F28FE683D00F15D41 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C33C6F28FE683D00F15D41 /* SimpleLineIcons.ttf */; };
 		82C33C8028FE683D00F15D41 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C33C7028FE683D00F15D41 /* MaterialIcons.ttf */; };
+		AE463526C2864A00B47FE937 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BBD93716F04B5399CB54FF /* Nunito-Bold.ttf */; };
+		EC091C99AE7E4A87BFBB8DF2 /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEAD2CC0AB24C1696DD3424 /* Nunito-Medium.ttf */; };
+		9CBF89F671744DDEAE96788B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E32B5930CC04E3CBE823AEF /* Nunito-Regular.ttf */; };
+		086875A6165740209ABBC807 /* Rebond-Grotesque-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B0360CACBD5475DBB18F270 /* Rebond-Grotesque-Bold.otf */; };
+		DA618A87D0CF4C27A226EACB /* Rebond-Grotesque-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42EAD9F9E57E4657A11A0A91 /* Rebond-Grotesque-Medium.otf */; };
+		21530FFA3C984D6BA7ECFA8E /* Rebond-Grotesque.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3B1CDC8CAE8C4D879BA6B25F /* Rebond-Grotesque.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +84,12 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-ArdxReactNativeBoilerplate-ArdxReactNativeBoilerplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArdxReactNativeBoilerplate-ArdxReactNativeBoilerplateTests.release.xcconfig"; path = "Target Support Files/Pods-ArdxReactNativeBoilerplate-ArdxReactNativeBoilerplateTests/Pods-ArdxReactNativeBoilerplate-ArdxReactNativeBoilerplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB49B0E75AC2477E94855CEC /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D1BBD93716F04B5399CB54FF /* Nunito-Bold.ttf */ = {isa = PBXFileReference; name = "Nunito-Bold.ttf"; path = "../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7EEAD2CC0AB24C1696DD3424 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; name = "Nunito-Medium.ttf"; path = "../assets/fonts/Nunito-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E32B5930CC04E3CBE823AEF /* Nunito-Regular.ttf */ = {isa = PBXFileReference; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8B0360CACBD5475DBB18F270 /* Rebond-Grotesque-Bold.otf */ = {isa = PBXFileReference; name = "Rebond-Grotesque-Bold.otf"; path = "../assets/fonts/Rebond-Grotesque-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		42EAD9F9E57E4657A11A0A91 /* Rebond-Grotesque-Medium.otf */ = {isa = PBXFileReference; name = "Rebond-Grotesque-Medium.otf"; path = "../assets/fonts/Rebond-Grotesque-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3B1CDC8CAE8C4D879BA6B25F /* Rebond-Grotesque.otf */ = {isa = PBXFileReference; name = "Rebond-Grotesque.otf"; path = "../assets/fonts/Rebond-Grotesque.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +146,12 @@
 			isa = PBXGroup;
 			children = (
 				DB49B0E75AC2477E94855CEC /* Poppins-Regular.ttf */,
+				D1BBD93716F04B5399CB54FF /* Nunito-Bold.ttf */,
+				7EEAD2CC0AB24C1696DD3424 /* Nunito-Medium.ttf */,
+				9E32B5930CC04E3CBE823AEF /* Nunito-Regular.ttf */,
+				8B0360CACBD5475DBB18F270 /* Rebond-Grotesque-Bold.otf */,
+				42EAD9F9E57E4657A11A0A91 /* Rebond-Grotesque-Medium.otf */,
+				3B1CDC8CAE8C4D879BA6B25F /* Rebond-Grotesque.otf */,
 			);
 			name = Resources;
 			path = "";
@@ -330,6 +348,12 @@
 				82C33C7628FE683D00F15D41 /* MaterialCommunityIcons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				00F1146DB9674D6595D3A348 /* Poppins-Regular.ttf in Resources */,
+				AE463526C2864A00B47FE937 /* Nunito-Bold.ttf in Resources */,
+				EC091C99AE7E4A87BFBB8DF2 /* Nunito-Medium.ttf in Resources */,
+				9CBF89F671744DDEAE96788B /* Nunito-Regular.ttf in Resources */,
+				086875A6165740209ABBC807 /* Rebond-Grotesque-Bold.otf in Resources */,
+				DA618A87D0CF4C27A226EACB /* Rebond-Grotesque-Medium.otf in Resources */,
+				21530FFA3C984D6BA7ECFA8E /* Rebond-Grotesque.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

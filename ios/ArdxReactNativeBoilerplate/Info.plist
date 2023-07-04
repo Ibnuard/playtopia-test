@@ -56,6 +56,12 @@
 		<string>Octicons.ttf</string>
 		<string>Zocial.ttf</string>
 		<string>Fontisto.ttf</string>
+		<string>Nunito-Bold.ttf</string>
+		<string>Nunito-Medium.ttf</string>
+		<string>Nunito-Regular.ttf</string>
+		<string>Rebond-Grotesque-Bold.otf</string>
+		<string>Rebond-Grotesque-Medium.otf</string>
+		<string>Rebond-Grotesque.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
