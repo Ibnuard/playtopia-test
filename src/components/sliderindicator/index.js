@@ -1,56 +1,42 @@
 import * as React from 'react';
 import {Animated, FlatList, View} from 'react-native';
 import styles from './styles';
-import {Scaler} from '../../styles';
 
 const AnimatedFlatList = props => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [indicatorWidth, setIndicatorWidth] = React.useState(0);
-  const [indicatorLeft] = React.useState(new Animated.Value(0));
-
-  // handle on scroll and animated indicator
-  React.useEffect(() => {
-    const calculateIndicatorPosition = () => {
-      const itemWidth = indicatorWidth / props?.data.length;
-      const leftPosition = currentIndex * (itemWidth * 2);
-      Animated.spring(indicatorLeft, {
-        toValue: leftPosition,
-        useNativeDriver: true,
-      }).start();
-    };
-
-    calculateIndicatorPosition();
-  }, [currentIndex, props?.data.length, indicatorWidth]);
-
-  // get indicator background width
-  const handleLayout = event => {
-    const {width} = event.nativeEvent.layout;
-    setIndicatorWidth(width);
-  };
+  const [contentOffset, setContentOffset] = React.useState({x: 0, y: 0});
+  const [contentSize, setContentSize] = React.useState(0);
+  const [parentWidth, setParentWidth] = React.useState(0);
 
   // calculate indicator active width based on data length
-  const indicatorActiveWidth = indicatorWidth - Scaler.scaleSize(28);
+  const indicatorActiveWidth = 25;
+
+  const scrollPerc =
+    (contentOffset.x / (contentSize - parentWidth)) *
+    (100 - indicatorActiveWidth);
 
   return (
     <View style={[props?.containerStyle]}>
       <FlatList
         {...props}
         onScroll={event => {
-          const scrollPosition = event.nativeEvent.contentOffset.x;
-          const itemWidth = event.nativeEvent.layoutMeasurement.width;
-          const currentIndex = Math.round(scrollPosition / itemWidth);
-
-          setCurrentIndex(currentIndex);
+          setContentOffset(event.nativeEvent.contentOffset);
+        }}
+        onContentSizeChange={(w, _) => {
+          setContentSize(w);
+        }}
+        onLayout={e => {
+          setParentWidth(e.nativeEvent.layout.width);
         }}
       />
+      <View></View>
       <View style={styles.indicatorContainer}>
-        <View style={styles.indicatorBackground} onLayout={handleLayout}>
+        <View style={styles.indicatorBackground}>
           <Animated.View
             style={[
               styles.indicatorForeground,
               {
-                width: indicatorActiveWidth,
-                transform: [{translateX: indicatorLeft}],
+                width: `${indicatorActiveWidth}%`,
+                left: `${Number(scrollPerc || 0).toFixed(0)}%`,
               },
             ]}
           />

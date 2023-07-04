@@ -1,21 +1,19 @@
 import * as React from 'react';
-import {View, Text, Image, StatusBar, FlatList} from 'react-native';
+import {View, Text, Image, StatusBar, FlatList, Dimensions} from 'react-native';
 import styles from './styles';
 import {IMAGES_RES} from '../../utils/images';
 import {
   AnimatedFlatList,
   Card,
   CityCard,
+  PromoItem,
   Row,
   SearchBar,
 } from '../../components';
 import Touchable from '../../components/touchable';
-import Carousel from 'react-native-snap-carousel';
 
 const HomeScreen = () => {
-  const TEST_CITY = [1, 2, 3, 4, 5, 6, 7];
-
-  const carouselRef = React.useRef(null);
+  const TEST_CITY = [1, 2, 3, 4, 5, 6];
 
   // render background
   const _renderBackground = () => {
@@ -103,25 +101,16 @@ const HomeScreen = () => {
 
   const data_car = [1, 2];
 
-  function test({item, index}) {
-    return (
-      <View>
-        <Image source={IMAGES_RES.banner} />
-      </View>
-    );
-  }
-
   // render promo and info
   const _renderPromoInfo = () => {
     return (
       <View style={styles.infopromoContainer}>
         <Text style={styles.textSubtitle}>Info & Promo</Text>
-        <Carousel
-          ref={carouselRef}
+        <FlatList
+          horizontal
           data={data_car}
-          renderItem={test}
-          sliderWidth={300}
-          itemWidth={300}
+          renderItem={({item, index}) => <PromoItem />}
+          pagingEnabled
         />
       </View>
     );
