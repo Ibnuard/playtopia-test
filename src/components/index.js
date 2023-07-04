@@ -6,6 +6,7 @@ import SearchBar from './searchbar';
 import CityCard from './citycard';
 import AnimatedFlatList from './sliderindicator';
 import PromoItem from './promo';
+import TabBar from './tabbar';
 
 export {
   Button,
@@ -16,4 +17,5 @@ export {
   CityCard,
   AnimatedFlatList,
   PromoItem,
+  TabBar,
 };

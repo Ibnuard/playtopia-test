@@ -4,6 +4,7 @@ import HomeScreen from '../screens/home';
 import ProfileScreen from '../screens/profile';
 import LoginScreen from '../screens/login';
 import SplashScreen from '../screens/splash';
+import {TabBar} from '../components';
 
 // create stack screen
 const Stack = createNativeStackNavigator();
@@ -42,15 +43,35 @@ export const AuthStackScreen = () => {
 // tab stack screen
 export const MainScreen = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <TabBar {...props} />}>
       <Tab.Screen
         name="HomeStack"
         component={HomeStack}
         options={{
           headerShown: false,
+          title: 'Home',
         }}
       />
-      <Tab.Screen name="ProfileStack" component={ProfileScreen} />
+      <Tab.Screen
+        name="OrderStack"
+        component={ProfileScreen}
+        options={{title: 'Pesanan'}}
+      />
+      <Tab.Screen
+        name="PlaycardStack"
+        component={ProfileScreen}
+        options={{title: 'Playcard'}}
+      />
+      <Tab.Screen
+        name="OutletStack"
+        component={ProfileScreen}
+        options={{title: 'Outlet'}}
+      />
+      <Tab.Screen
+        name="AccountStack"
+        component={ProfileScreen}
+        options={{title: 'Akun'}}
+      />
     </Tab.Navigator>
   );
 };
