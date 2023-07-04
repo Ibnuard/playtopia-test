@@ -34,7 +34,6 @@ export const TypoStyle = (
   return {
     color: color ?? COLOR_BLACK,
     fontSize: typeof size == 'string' ? FONT_SIZE[size] : scaleFont(size),
-    fontWeight: weight,
     fontFamily: FONT_STYLE(font, weight),
   };
 };

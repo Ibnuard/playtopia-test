@@ -24,7 +24,7 @@ const LoginScreen = ({navigation}) => {
         title="Go to main screen kuy"
         upperCase={false}
         isLoading={false}
-        disabled
+        disabled={false}
         onPress={() => signIn()}
       />
       <Button

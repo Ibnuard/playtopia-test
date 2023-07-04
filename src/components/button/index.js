@@ -36,7 +36,7 @@ const Button = ({
       );
     } else {
       return (
-        <Text style={[textStyle, _containerStyle().text]}>
+        <Text style={[_containerStyle().text, textStyle]}>
           {upperCase ? title.toUpperCase() : title}
         </Text>
       );

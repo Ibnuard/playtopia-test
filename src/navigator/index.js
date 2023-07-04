@@ -5,10 +5,10 @@ import ProfileScreen from '../screens/profile';
 import LoginScreen from '../screens/login';
 import SplashScreen from '../screens/splash';
 
-//create stack screen
+// create stack screen
 const Stack = createNativeStackNavigator();
 
-//create bottom tab
+// create bottom tab
 const Tab = createBottomTabNavigator();
 
 //===================================
@@ -29,7 +29,7 @@ export const SplashStack = () => {
   );
 };
 
-//auth stack screen
+// auth stack screen
 export const AuthStackScreen = () => {
   return (
     <Stack.Navigator>
@@ -39,12 +39,33 @@ export const AuthStackScreen = () => {
   );
 };
 
-//tab stack screen
+// tab stack screen
 export const MainScreen = () => {
   return (
     <Tab.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen
+        name="HomeStack"
+        component={HomeStack}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen name="ProfileStack" component={ProfileScreen} />
     </Tab.Navigator>
+  );
+};
+
+// home stack
+const HomeStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
   );
 };
