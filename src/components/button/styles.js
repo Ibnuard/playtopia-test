@@ -1,65 +1,80 @@
 import {StyleSheet} from 'react-native';
-import {Colors, Typo} from '../../styles';
+import {Colors, Scaler, Typo} from '../../styles';
 
 const styles = StyleSheet.create({
-  container: {
+  // button style type
+  primary: {
     width: '100%',
+    height: Scaler.scaleSize(48),
     backgroundColor: Colors.COLOR_PRIMARY,
-    paddingVertical: 14,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
+    borderRadius: 12,
   },
 
-  containerInactive: {
+  secondary: {
     width: '100%',
-    backgroundColor: Colors.COLOR_GRAY,
-    paddingVertical: 14,
+    height: Scaler.scaleSize(48),
+    backgroundColor: Colors.COLOR_SECONDARY,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
+    borderRadius: 12,
   },
 
-  containerInvert: {
+  invert_primary: {
     width: '100%',
-    backgroundColor: Colors.COLOR_TRANSPARENT,
-    paddingVertical: 14,
+    height: Scaler.scaleSize(48),
+    borderWidth: 1,
+    borderColor: Colors.COLOR_PRIMARY,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
-    borderWidth: 2,
-    borderColor: Colors.COLOR_ACCENT,
+    borderRadius: 12,
   },
 
-  containerInvertInactive: {
+  invert_secondary: {
     width: '100%',
-    backgroundColor: Colors.COLOR_TRANSPARENT,
-    paddingVertical: 14,
+    height: Scaler.scaleSize(48),
+    borderWidth: 1,
+    borderColor: Colors.COLOR_SECONDARY,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
-    borderWidth: 2,
-    borderColor: Colors.COLOR_GRAY,
+    borderRadius: 12,
+  },
+
+  disabled: {
+    width: '100%',
+    height: Scaler.scaleSize(48),
+    backgroundColor: Colors.COLOR_LIGHT_GRAY,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+  },
+
+  disabled_invert: {
+    width: '100%',
+    height: Scaler.scaleSize(48),
+    borderWidth: 1.5,
+    borderColor: Colors.COLOR_LIGHT_GRAY,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
   },
 
   //text style
-  textTitle: {
-    ...Typo.TypoStyle('normal'),
+  text_title_primary: {
+    ...Typo.TypoStyle('medium', Colors.COLOR_WHITE),
   },
 
-  textTitleInactive: {
-    ...Typo.TypoStyle('normal'),
-    color: Colors.COLOR_DARK_GRAY,
+  text_title_invert_primary: {
+    ...Typo.TypoStyle('medium', Colors.COLOR_PRIMARY),
   },
 
-  textTitleInvert: {
-    ...Typo.TypoStyle('normal'),
-    color: Colors.COLOR_ACCENT,
+  text_title_invert_secondary: {
+    ...Typo.TypoStyle('medium', Colors.COLOR_SECONDARY),
   },
 
-  textTitleInvertInactive: {
-    ...Typo.TypoStyle('normal'),
-    color: Colors.COLOR_DARK_GRAY,
+  text_disabled: {
+    ...Typo.TypoStyle('medium', Colors.COLOR_DARK_GRAY),
   },
 });
 

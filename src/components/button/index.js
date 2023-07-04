@@ -8,6 +8,7 @@ const Button = ({
   isLoading = false,
   disabled = false,
   invert = false,
+  type = 'primary', // primary || secondary
   title = 'This is Button',
   buttonStyle,
   textStyle,
@@ -15,25 +16,14 @@ const Button = ({
 }) => {
   //define button and text style based on condition
   const _containerStyle = () => {
-    if (!invert) {
-      if (!disabled && !isLoading) {
-        return {button: styles.container, text: styles.textTitle};
-      } else {
-        return {
-          button: styles.containerInactive,
-          text: styles.textTitleInactive,
-        };
-      }
-    } else {
-      if (!disabled && !isLoading) {
-        return {button: styles.containerInvert, text: styles.textTitleInvert};
-      } else {
-        return {
-          button: styles.containerInvertInactive,
-          text: styles.textTitleInvertInactive,
-        };
-      }
-    }
+    return {
+      button: disabled
+        ? styles[invert ? 'disabled_invert' : 'disabled'] // handle on disabled
+        : styles[invert ? `invert_${type}` : type], // handle on active
+      text: disabled
+        ? styles['text_disabled'] // handle on disabled
+        : styles[`text_title_${invert ? 'invert_' : ''}${type}`], // handle on active
+    };
   };
 
   //handle is Loading statment
@@ -57,7 +47,7 @@ const Button = ({
   return (
     <TouchableOpacity
       activeOpacity={disabled ? 1 : 0.6}
-      style={[buttonStyle, _containerStyle().button]}
+      style={[_containerStyle().button, buttonStyle]}
       onPress={disabled || isLoading ? null : onPress ?? null}>
       {_renderContent()}
     </TouchableOpacity>

@@ -24,7 +24,7 @@ const LoginScreen = ({navigation}) => {
         title="Go to main screen kuy"
         upperCase={false}
         isLoading={false}
-        disabled={false}
+        disabled
         onPress={() => signIn()}
       />
       <Button
@@ -38,7 +38,7 @@ const LoginScreen = ({navigation}) => {
         title="Load data"
         isLoading={false}
         invert
-        disabled={false}
+        disabled
         onPress={() => onLoadDataPressed()}
       />
       <Button
