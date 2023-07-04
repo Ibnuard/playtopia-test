@@ -32,7 +32,7 @@ const AnimatedFlatList = props => {
   const indicatorActiveWidth = indicatorWidth - Scaler.scaleSize(28);
 
   return (
-    <>
+    <View style={[props?.containerStyle]}>
       <FlatList
         {...props}
         onScroll={event => {
@@ -43,18 +43,20 @@ const AnimatedFlatList = props => {
           setCurrentIndex(currentIndex);
         }}
       />
-      <View style={styles.indicatorContainer} onLayout={handleLayout}>
-        <Animated.View
-          style={[
-            styles.indicator,
-            {
-              width: indicatorActiveWidth,
-              transform: [{translateX: indicatorLeft}],
-            },
-          ]}
-        />
+      <View style={styles.indicatorContainer}>
+        <View style={styles.indicatorBackground} onLayout={handleLayout}>
+          <Animated.View
+            style={[
+              styles.indicatorForeground,
+              {
+                width: indicatorActiveWidth,
+                transform: [{translateX: indicatorLeft}],
+              },
+            ]}
+          />
+        </View>
       </View>
-    </>
+    </View>
   );
 };
 

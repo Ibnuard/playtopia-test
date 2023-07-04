@@ -7,15 +7,15 @@ import {Colors} from '../../styles';
 import {IMAGES_RES} from '../../utils/images';
 import Touchable from '../touchable';
 
-const SearchBar = () => {
+const SearchBar = props => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, props.containerStyle]}>
       <Row>
         <View style={styles.inputLeft}>
           <Icon name="search1" color={Colors.COLOR_DARK_GRAY} size={20} />
         </View>
         <TextInput
-          placeholder="Test"
+          {...props}
           placeholderTextColor={Colors.COLOR_DARK_GRAY}
           style={styles.input}
         />

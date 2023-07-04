@@ -11,4 +11,5 @@ export const IMAGES_RES = {
     pink_right: require('../../assets/images/cardRightPink.png'),
   },
   searchPlus: require('../../assets/images/searchPlus.png'),
+  banner: require('../../assets/images/banner1.png'),
 };
