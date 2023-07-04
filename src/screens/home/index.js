@@ -1,8 +1,14 @@
 import * as React from 'react';
-import {View, Text, Image, StatusBar, FlatList} from 'react-native';
+import {View, Text, Image, StatusBar} from 'react-native';
 import styles from './styles';
 import {IMAGES_RES} from '../../utils/images';
-import {Card, CityCard, Row, SearchBar} from '../../components';
+import {
+  AnimatedFlatList,
+  Card,
+  CityCard,
+  Row,
+  SearchBar,
+} from '../../components';
 import Touchable from '../../components/touchable';
 
 const HomeScreen = () => {
@@ -75,7 +81,7 @@ const HomeScreen = () => {
             <Text>atau</Text>
             <View style={styles.divider} />
           </Row>
-          <FlatList
+          <AnimatedFlatList
             horizontal
             data={TEST_CITY}
             renderItem={({item, index}) => <CityCard />}

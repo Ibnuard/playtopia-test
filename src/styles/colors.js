@@ -9,8 +9,8 @@ export const COLOR_RED = '#FF6565';
 export const COLOR_BLACK = '#090909';
 
 //GRAY COLOR
-export const COLOR_GRAY = '#969696';
-export const COLOR_DARK_GRAY = '#4f4f4f';
+export const COLOR_GRAY = '#ECF2F8';
+export const COLOR_DARK_GRAY = '#868686';
 export const COLOR_LIGHT_GRAY = '#e3e3e3';
 
 //OTHER

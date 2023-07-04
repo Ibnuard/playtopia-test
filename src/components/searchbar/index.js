@@ -12,11 +12,11 @@ const SearchBar = () => {
     <View style={styles.container}>
       <Row>
         <View style={styles.inputLeft}>
-          <Icon name="search1" color={Colors.COLOR_GRAY} size={20} />
+          <Icon name="search1" color={Colors.COLOR_DARK_GRAY} size={20} />
         </View>
         <TextInput
           placeholder="Test"
-          placeholderTextColor={Colors.COLOR_GRAY}
+          placeholderTextColor={Colors.COLOR_DARK_GRAY}
           style={styles.input}
         />
         <Touchable>

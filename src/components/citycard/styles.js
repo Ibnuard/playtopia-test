@@ -3,7 +3,7 @@ import {Colors, Scaler, Size, Typo} from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.COLOR_LIGHT_GRAY,
+    backgroundColor: Colors.COLOR_GRAY,
     borderRadius: 16,
     padding: Size.SIZE_12,
     marginRight: Size.SIZE_16,
