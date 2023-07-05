@@ -9,6 +9,8 @@ import PromoItem from './promo';
 import TabBar from './tabbar';
 import ProfileCard from './profilecard';
 import GradientButton from './gradientbutton';
+import LevelCard from './levelcard';
+import VoucherCard from './vouchercard';
 
 export {
   Button,
@@ -22,4 +24,6 @@ export {
   TabBar,
   ProfileCard,
   GradientButton,
+  LevelCard,
+  VoucherCard,
 };
