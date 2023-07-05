@@ -17,3 +17,6 @@ export const COLOR_LIGHT_GRAY = '#e3e3e3';
 
 //OTHER
 export const COLOR_TRANSPARENT = 'transparent';
+
+// PLAY CARD COLOR
+export const PLAYCARD_BRONZE = '#FC986A';

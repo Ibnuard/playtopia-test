@@ -7,6 +7,7 @@ import SplashScreen from '../screens/splash';
 import {BackButton, TabBar} from '../components';
 import {Colors, Typo} from '../styles';
 import PlayCardScreen from '../screens/playcard';
+import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
 // create stack screen
 const Stack = createNativeStackNavigator();
@@ -45,7 +46,18 @@ export const AuthStackScreen = () => {
 // tab stack screen
 export const MainScreen = () => {
   return (
-    <Tab.Navigator tabBar={props => <TabBar {...props} />}>
+    <Tab.Navigator
+      tabBar={props => <TabBar {...props} />}
+      screenOptions={({route}) => ({
+        tabBarStyle: (route => {
+          const routeName = getFocusedRouteNameFromRoute(route) ?? '';
+          if (routeName === 'Home' || routeName === 'Account' || !routeName) {
+            return {display: 'flex'};
+          } else {
+            return {display: 'none'};
+          }
+        })(route),
+      })}>
       <Tab.Screen
         name="HomeStack"
         component={HomeStack}
@@ -74,6 +86,7 @@ export const MainScreen = () => {
         component={ProfileStack}
         options={{
           headerShown: false,
+          title: 'Akun',
         }}
       />
     </Tab.Navigator>
@@ -100,7 +113,7 @@ const ProfileStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Profile"
+        name="Account"
         component={ProfileScreen}
         options={{
           title: 'Akun',

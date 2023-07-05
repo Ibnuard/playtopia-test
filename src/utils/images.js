@@ -38,4 +38,5 @@ export const IMAGES_RES = {
   button: {
     back: require('../../assets/images/back.png'),
   },
+  playcardBackground: require('../../assets/images/playCardBg.png'),
 };

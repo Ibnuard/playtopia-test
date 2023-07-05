@@ -4,6 +4,15 @@ import {IMAGES_RES} from '../../utils/images';
 import {Colors} from '../../styles';
 
 const TabBar = ({state, descriptors, navigation}) => {
+  // == handle visibility
+  const focusedOptions = descriptors[state.routes[state.index].key].options;
+
+  const {display} = focusedOptions?.tabBarStyle;
+
+  if (display == 'none') {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       {state.routes.map((route, index) => {
