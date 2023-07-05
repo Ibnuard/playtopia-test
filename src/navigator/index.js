@@ -4,8 +4,9 @@ import HomeScreen from '../screens/home';
 import ProfileScreen from '../screens/profile';
 import LoginScreen from '../screens/login';
 import SplashScreen from '../screens/splash';
-import {TabBar} from '../components';
+import {BackButton, TabBar} from '../components';
 import {Colors, Typo} from '../styles';
+import PlayCardScreen from '../screens/playcard';
 
 // create stack screen
 const Stack = createNativeStackNavigator();
@@ -72,11 +73,7 @@ export const MainScreen = () => {
         name="AccountStack"
         component={ProfileStack}
         options={{
-          title: 'Akun',
-          headerShadowVisible: false,
-          headerTitleStyle: {
-            ...Typo.TypoStyle(20, Colors.COLOR_BLACK, 'bold'),
-          },
+          headerShown: false,
         }}
       />
     </Tab.Navigator>
@@ -106,7 +103,19 @@ const ProfileStack = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          headerShown: false,
+          title: 'Akun',
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            ...Typo.TypoStyle(20, Colors.COLOR_BLACK, 'bold'),
+          },
+        }}
+      />
+      <Stack.Screen
+        name="PlayCard"
+        component={PlayCardScreen}
+        options={{
+          title: '',
+          headerTransparent: true,
         }}
       />
     </Stack.Navigator>

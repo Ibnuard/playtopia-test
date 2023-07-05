@@ -35,4 +35,7 @@ export const IMAGES_RES = {
     help: require('../../assets/images/ic_help.png'),
     other: require('../../assets/images/ic_other.png'),
   },
+  button: {
+    back: require('../../assets/images/back.png'),
+  },
 };

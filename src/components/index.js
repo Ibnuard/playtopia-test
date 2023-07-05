@@ -11,6 +11,7 @@ import ProfileCard from './profilecard';
 import GradientButton from './gradientbutton';
 import LevelCard from './levelcard';
 import VoucherCard from './vouchercard';
+import BackButton from './backbutton';
 
 export {
   Button,
@@ -26,4 +27,5 @@ export {
   GradientButton,
   LevelCard,
   VoucherCard,
+  BackButton,
 };

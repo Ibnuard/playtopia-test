@@ -13,7 +13,7 @@ import Touchable from '../../components/touchable';
 import Icon from 'react-native-vector-icons/Entypo';
 import {Colors} from '../../styles';
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
   // config other menus
   const OTHER_MENU = [
     {
@@ -49,7 +49,10 @@ const ProfileScreen = () => {
       <View>
         <Text style={styles.textSubtitle}>Membership</Text>
         <GradientButton />
-        <LevelCard style={styles.levelCard} />
+        <LevelCard
+          style={styles.levelCard}
+          onPress={() => navigation.navigate('PlayCard')}
+        />
       </View>
     );
   };

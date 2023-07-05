@@ -7,9 +7,9 @@ import Icon from 'react-native-vector-icons/Entypo';
 import {Colors} from '../../styles';
 import Touchable from '../touchable';
 
-const LevelCard = ({style}) => {
+const LevelCard = ({style, onPress}) => {
   return (
-    <Touchable style={[styles.container, style]}>
+    <Touchable style={[styles.container, style]} onPress={onPress}>
       <Image
         source={IMAGES_RES.bronzeCard}
         style={styles.cardBackground}

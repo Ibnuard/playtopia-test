@@ -83,9 +83,12 @@ const TabBar = ({state, descriptors, navigation}) => {
               style={[
                 styles.textTitle,
                 {
-                  color: isFocused
-                    ? Colors.COLOR_PRIMARY
-                    : Colors.COLOR_DARK_GRAY,
+                  color:
+                    route.name == 'PlaycardStack'
+                      ? Colors?.COLOR_SECONDARY
+                      : isFocused
+                      ? Colors.COLOR_PRIMARY
+                      : Colors.COLOR_DARK_GRAY,
                 },
               ]}>
               {label}
