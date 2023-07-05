@@ -5,12 +5,15 @@ import {useFocusEffect} from '@react-navigation/native';
 import {AnimatedFlatList, BackButton, LevelCard} from '../../components';
 import StarBackground from '../../../assets/svgs/starBg';
 import {getColorByMode} from '../../utils/utils';
+import Carousel, {Pagination} from 'react-native-snap-carousel';
 
 const PlayCardScreen = ({navigation}) => {
   const [currentMode, setCurrentMode] = React.useState('BRONZE');
+  const [activeSlide, setActiveSlide] = React.useState(0);
 
   // animated flatlist var
   const {width} = Dimensions.get('window');
+  const carousel = React.useRef(null);
 
   // theme var
   const COLOR_THEME = getColorByMode(currentMode);
@@ -20,6 +23,10 @@ const PlayCardScreen = ({navigation}) => {
     {
       type: 'BRONZE',
       point: 1000,
+    },
+    {
+      type: 'SILVER',
+      point: 10000,
     },
     {
       type: 'SILVER',
@@ -49,24 +56,35 @@ const PlayCardScreen = ({navigation}) => {
 
   // render top container
   const _renderTopContainer = () => {
+    // calculatre padding to centering card
+    const divide = width / (TEST.length + 1.2);
+
     return (
-      <>
+      <View>
         <Text style={styles.textTitle}>PLAYCARD</Text>
-        <AnimatedFlatList
-          horizontal
+        <Carousel
+          ref={carousel}
           data={TEST}
-          pagingEnabled
-          indicator={'dot'}
-          onActiveIndex={index => setCurrentMode(TEST[index].type)}
-          renderItem={({item, index}) => (
-            <LevelCard
-              type="large"
-              data={item}
-              style={{width: width - 52, marginLeft: 8}}
-            />
-          )}
+          layout="default"
+          renderItem={({item, index}) => <LevelCard type="large" data={item} />}
+          sliderWidth={width - 36}
+          itemWidth={width - divide}
+          onSnapToItem={index => {
+            setCurrentMode(TEST[index].type);
+            setActiveSlide(index);
+          }}
         />
-      </>
+        <Pagination
+          dotsLength={TEST.length}
+          activeDotIndex={activeSlide}
+          containerStyle={styles.pagination}
+          dotContainerStyle={styles.dotContainer}
+          dotStyle={styles.dotActive}
+          inactiveDotStyle={styles.dotInactive}
+          inactiveDotOpacity={0.4}
+          inactiveDotScale={0.6}
+        />
+      </View>
     );
   };
 

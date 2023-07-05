@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Animated, FlatList, View} from 'react-native';
+import {Animated, Dimensions, FlatList, View} from 'react-native';
 import styles from './styles';
 import Row from '../row';
 
@@ -12,9 +12,20 @@ const AnimatedFlatList = props => {
   // calculate indicator active width based on data length
   const indicatorActiveWidth = 45;
 
+  // paralax var
+  const {width} = Dimensions.get('window');
+  const itemLength = props?.data.length;
+  const itemWidth = width / (itemLength + 0.5);
+  const startScroll = (itemWidth * 3) / 4;
+
+  // slider indicator var
   const scrollPerc =
     (contentOffset.x / (contentSize - parentWidth)) *
     (100 - indicatorActiveWidth);
+
+  const snapToOffsets = props?.data?.map((x, i) => {
+    return i * itemWidth + startScroll;
+  });
 
   // check on scroll index change
   React.useEffect(() => {

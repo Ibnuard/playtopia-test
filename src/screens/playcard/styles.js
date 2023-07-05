@@ -22,6 +22,29 @@ const styles = StyleSheet.create({
     top: -100,
   },
 
+  pagination: {
+    padding: 0,
+    marginTop: -10,
+  },
+
+  dotContainer: {
+    marginHorizontal: 2,
+  },
+
+  dotActive: {
+    width: Size.SIZE_18,
+    height: Size.SIZE_10,
+    borderRadius: 5,
+    backgroundColor: Colors.COLOR_DARK_GRAY,
+  },
+
+  dotInactive: {
+    width: Size.SIZE_10,
+    height: Size.SIZE_10,
+    borderRadius: 5,
+    backgroundColor: Colors.COLOR_GRAY,
+  },
+
   // text
   textTitle: {
     ...Typo.TypoStyle(20, Colors.COLOR_WHITE, 'bold', 'Nunito'),

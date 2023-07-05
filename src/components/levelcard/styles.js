@@ -1,5 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import {Colors, Scaler, Size, Typo} from '../../styles';
+
+const {width} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
   largeCardContainer: {
     backgroundColor: Colors.PLAYCARD_BRONZE_CARD,
     padding: Scaler.scaleSize(20),
-    height: 180,
+    height: Scaler.scaleSize(180),
     overflow: 'hidden',
     elevation: 8,
   },
