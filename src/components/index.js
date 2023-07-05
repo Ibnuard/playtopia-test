@@ -8,6 +8,7 @@ import AnimatedFlatList from './sliderindicator';
 import PromoItem from './promo';
 import TabBar from './tabbar';
 import ProfileCard from './profilecard';
+import GradientButton from './gradientbutton';
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   PromoItem,
   TabBar,
   ProfileCard,
+  GradientButton,
 };

@@ -4,7 +4,7 @@ import styles from './styles';
 import Card from '../card';
 import Touchable from '../touchable';
 import Row from '../row';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/Entypo';
 import {Colors} from '../../styles';
 
 const ProfileCard = () => {
@@ -24,7 +24,11 @@ const ProfileCard = () => {
               <Text style={styles.textChildTitle}>Title</Text>
               <Text style={styles.textChildCount}>Child count</Text>
             </View>
-            <Icon name="right" color={Colors.COLOR_DARK_GRAY} size={20} />
+            <Icon
+              name="chevron-small-right"
+              color={Colors.COLOR_DARK_GRAY}
+              size={24}
+            />
           </Row>
         </View>
       </Card>
