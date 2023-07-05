@@ -22,6 +22,23 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
+  largeCardContainer: {
+    backgroundColor: Colors.PLAYCARD_BRONZE_CARD,
+    padding: Scaler.scaleSize(20),
+    overflow: 'hidden',
+  },
+
+  ornamentSmall: {
+    position: 'absolute',
+    right: 0,
+  },
+
+  ornamentLarge: {
+    position: 'absolute',
+    left: -25,
+    top: -80,
+  },
+
   // text
   textPlayCount: {
     ...Typo.TypoStyle(12, Colors.COLOR_WHITE, 'normal', 'Nunito'),

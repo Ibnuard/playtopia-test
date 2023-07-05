@@ -26,6 +26,7 @@ export const IMAGES_RES = {
   bronzeCard: require('../../assets/images/bronzeCard.png'),
   bronzeBadge: require('../../assets/images/levelBronze.png'),
   playcardLogo: require('../../assets/images/playcardLogo.png'),
+  playcardLogoTransparent: require('../../assets/images/playCardnoBg.png'),
   playmilesLogo: require('../../assets/images/playmilesLogo.png'),
   voucherIcon: require('../../assets/images/voucherIcon.png'),
   voucherBackground: require('../../assets/images/voucherBg.png'),

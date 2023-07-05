@@ -2,7 +2,7 @@ import {Image, Text, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {useFocusEffect} from '@react-navigation/native';
-import {BackButton} from '../../components';
+import {BackButton, LevelCard} from '../../components';
 import {IMAGES_RES} from '../../utils/images';
 import StarBackground from '../../../assets/svgs/starBg';
 
@@ -30,6 +30,7 @@ const PlayCardScreen = ({navigation}) => {
   return (
     <View style={[styles.container, styles.bgBronze]}>
       {_renderDynamicBackground()}
+      <LevelCard type="large" />
       <Text>PlayCardScreen</Text>
     </View>
   );

@@ -1,10 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {Colors, Scaler} from '../../styles';
+import {Colors, Scaler, Size} from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Scaler.scaleSize(108),
+    paddingHorizontal: Size.SIZE_16,
   },
 
   bgBronze: {
