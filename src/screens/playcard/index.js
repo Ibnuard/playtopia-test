@@ -4,9 +4,17 @@ import styles from './styles';
 import {useFocusEffect} from '@react-navigation/native';
 import {AnimatedFlatList, BackButton, LevelCard} from '../../components';
 import StarBackground from '../../../assets/svgs/starBg';
+import {getColorByMode} from '../../utils/utils';
 
 const PlayCardScreen = ({navigation}) => {
+  const [currentMode, setCurrentMode] = React.useState('BRONZE');
+
+  // animated flatlist var
   const {width} = Dimensions.get('window');
+
+  // theme var
+  const COLOR_THEME = getColorByMode(currentMode);
+
   // test member
   const TEST = [
     {
@@ -34,7 +42,7 @@ const PlayCardScreen = ({navigation}) => {
   const _renderDynamicBackground = () => {
     return (
       <View style={styles.starBg}>
-        <StarBackground />
+        <StarBackground color={COLOR_THEME} />
       </View>
     );
   };
@@ -49,6 +57,7 @@ const PlayCardScreen = ({navigation}) => {
           data={TEST}
           pagingEnabled
           indicator={'dot'}
+          onActiveIndex={index => setCurrentMode(TEST[index].type)}
           renderItem={({item, index}) => (
             <LevelCard
               type="large"
@@ -61,7 +70,7 @@ const PlayCardScreen = ({navigation}) => {
   };
 
   return (
-    <View style={[styles.container, styles.bgBronze]}>
+    <View style={[styles.container, styles[`bg${currentMode}`]]}>
       {_renderDynamicBackground()}
       {_renderTopContainer()}
     </View>

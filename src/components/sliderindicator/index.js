@@ -20,7 +20,10 @@ const AnimatedFlatList = props => {
   React.useEffect(() => {
     const currentIndex = Math.round(contentOffset.x / parentWidth);
 
-    setActiveIndex(currentIndex);
+    setActiveIndex(currentIndex ? currentIndex : 0);
+    props?.onActiveIndex
+      ? props.onActiveIndex(currentIndex ? currentIndex : 0)
+      : null;
   }, [contentOffset]);
 
   // render slider indicator

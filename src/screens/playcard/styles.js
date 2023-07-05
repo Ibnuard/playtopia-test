@@ -8,8 +8,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: Size.SIZE_16,
   },
 
-  bgBronze: {
+  bgBRONZE: {
     backgroundColor: Colors.PLAYCARD_BRONZE,
+  },
+
+  bgSILVER: {
+    backgroundColor: Colors.PLAYCARD_SILVER,
   },
 
   starBg: {
