@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors, Scaler, Size} from '../../styles';
+import {Colors, Scaler, Size, Typo} from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,6 +16,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: -100,
     top: -100,
+  },
+
+  // text
+  textTitle: {
+    ...Typo.TypoStyle(20, Colors.COLOR_WHITE, 'bold', 'Nunito'),
+    marginBottom: Size.SIZE_16,
   },
 });
 

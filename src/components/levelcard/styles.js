@@ -63,6 +63,10 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
 
+  gap: {
+    height: Scaler.scaleSize(54),
+  },
+
   // text
   textPlayCount: {
     ...Typo.TypoStyle(12, Colors.COLOR_WHITE, 'normal', 'Nunito'),

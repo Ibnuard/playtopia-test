@@ -1,12 +1,24 @@
-import {Image, Text, View} from 'react-native';
+import {Dimensions, Image, Text, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {useFocusEffect} from '@react-navigation/native';
-import {BackButton, LevelCard} from '../../components';
-import {IMAGES_RES} from '../../utils/images';
+import {AnimatedFlatList, BackButton, LevelCard} from '../../components';
 import StarBackground from '../../../assets/svgs/starBg';
 
 const PlayCardScreen = ({navigation}) => {
+  const {width} = Dimensions.get('window');
+  // test member
+  const TEST = [
+    {
+      type: 'BRONZE',
+      point: 1000,
+    },
+    {
+      type: 'SILVER',
+      point: 10000,
+    },
+  ];
+
   // set back button
   useFocusEffect(
     React.useCallback(() => {
@@ -27,11 +39,30 @@ const PlayCardScreen = ({navigation}) => {
     );
   };
 
+  // render top container
+  const _renderTopContainer = () => {
+    return (
+      <>
+        <Text style={styles.textTitle}>PLAYCARD</Text>
+        <AnimatedFlatList
+          horizontal
+          data={TEST}
+          pagingEnabled
+          renderItem={({item, index}) => (
+            <LevelCard
+              type="large"
+              style={{width: width - 52, marginLeft: 8}}
+            />
+          )}
+        />
+      </>
+    );
+  };
+
   return (
     <View style={[styles.container, styles.bgBronze]}>
       {_renderDynamicBackground()}
-      <LevelCard type="large" />
-      <Text>PlayCardScreen</Text>
+      {_renderTopContainer()}
     </View>
   );
 };

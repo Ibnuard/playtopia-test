@@ -43,7 +43,7 @@ const LevelCard = ({style, type = 'small', onPress}) => {
   // render large card
   const _renderLargeCard = () => {
     return (
-      <Card style={styles.largeCardContainer}>
+      <Card style={[styles.largeCardContainer, style]}>
         <OrnamentLarge style={styles.ornamentLarge} />
         <OrnamentSmall style={styles.ornamentSmall} />
         <Row>
@@ -52,12 +52,13 @@ const LevelCard = ({style, type = 'small', onPress}) => {
           </View>
           <Text style={styles.textPlayCountLarge}>40 PLAYMILES</Text>
         </Row>
-        <View style={styles.centerContainer}>
+        {/* <View style={styles.centerContainer}>
           <Image source={IMAGES_RES.lockIcon} />
           <Text style={styles.textLockedDesc}>
             Transaksi <Text style={styles.textLockedValue}>10000</Text> kurang
           </Text>
-        </View>
+        </View> */}
+        <View style={styles.gap} />
         <Text style={styles.textName}>Nama</Text>
         <Row>
           <Text style={styles.textNumber}>123456</Text>
