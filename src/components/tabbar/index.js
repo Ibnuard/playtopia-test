@@ -35,7 +35,11 @@ const TabBar = ({state, descriptors, navigation}) => {
 
           if (!isFocused && !event.defaultPrevented) {
             // The `merge: true` option makes sure that the params inside the tab screen are preserved
-            navigation.navigate({name: route.name, merge: true});
+            if (route.name == 'PlaycardStack') {
+              navigation.navigate({name: 'PlayCardQR', merge: true});
+            } else {
+              navigation.navigate({name: route.name, merge: true});
+            }
           }
         };
 
@@ -89,6 +93,8 @@ const TabBar = ({state, descriptors, navigation}) => {
             }>
             <Image source={getIcon()} />
             <Text
+              adjustsFontSizeToFit
+              numberOfLines={1}
               style={[
                 styles.textTitle,
                 {

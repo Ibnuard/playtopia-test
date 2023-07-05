@@ -8,6 +8,7 @@ import {BackButton, TabBar} from '../components';
 import {Colors, Typo} from '../styles';
 import PlayCardScreen from '../screens/playcard';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
+import PlayCardQRScreen from '../screens/playcardqr';
 
 // create stack screen
 const Stack = createNativeStackNavigator();
@@ -46,6 +47,26 @@ export const AuthStackScreen = () => {
 // tab stack screen
 export const MainScreen = () => {
   return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="TabStack"
+        component={TabStack}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PlayCardQR"
+        component={PlayCardQRScreen}
+        options={{
+          title: '',
+          headerShadowVisible: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const TabStack = () => {
+  return (
     <Tab.Navigator
       tabBar={props => <TabBar {...props} />}
       screenOptions={({route}) => ({
@@ -71,10 +92,13 @@ export const MainScreen = () => {
         component={ProfileScreen}
         options={{title: 'Pesanan'}}
       />
-      <Tab.Screen
+      <Stack.Screen
         name="PlaycardStack"
-        component={ProfileScreen}
-        options={{title: 'Playcard'}}
+        component={HomeStack}
+        options={{
+          headerShown: false,
+          title: 'Playcard',
+        }}
       />
       <Tab.Screen
         name="OutletStack"

@@ -38,9 +38,11 @@ export const IMAGES_RES = {
   },
   button: {
     back: require('../../assets/images/back.png'),
+    exit: require('../../assets/images/exit.png'),
   },
   playcardBackground: require('../../assets/images/playCardBg.png'),
   lockIcon: require('../../assets/images/ic_lock.png'),
   lockIconDark: require('../../assets/images/ic_lock_dark.png'),
   rpIcon: require('../../assets/images/ic_rp.png'),
+  exampleQR: require('../../assets/images/ex_qr.png'),
 };
