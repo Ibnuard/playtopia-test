@@ -7,6 +7,7 @@ import CityCard from './citycard';
 import AnimatedFlatList from './sliderindicator';
 import PromoItem from './promo';
 import TabBar from './tabbar';
+import ProfileCard from './profilecard';
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   AnimatedFlatList,
   PromoItem,
   TabBar,
+  ProfileCard,
 };

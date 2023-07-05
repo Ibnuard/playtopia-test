@@ -5,6 +5,7 @@ import ProfileScreen from '../screens/profile';
 import LoginScreen from '../screens/login';
 import SplashScreen from '../screens/splash';
 import {TabBar} from '../components';
+import {Colors, Typo} from '../styles';
 
 // create stack screen
 const Stack = createNativeStackNavigator();
@@ -69,8 +70,14 @@ export const MainScreen = () => {
       />
       <Tab.Screen
         name="AccountStack"
-        component={ProfileScreen}
-        options={{title: 'Akun'}}
+        component={ProfileStack}
+        options={{
+          title: 'Akun',
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            ...Typo.TypoStyle(20, Colors.COLOR_BLACK, 'bold'),
+          },
+        }}
       />
     </Tab.Navigator>
   );
@@ -83,6 +90,21 @@ const HomeStack = () => {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+// profile stack
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Profile"
+        component={ProfileScreen}
         options={{
           headerShown: false,
         }}
