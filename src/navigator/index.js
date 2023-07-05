@@ -54,11 +54,10 @@ export const MainScreen = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="PlayCardQR"
-        component={PlayCardQRScreen}
+        name="PlayCardStack"
+        component={PlayCardStack}
         options={{
-          title: '',
-          headerShadowVisible: false,
+          headerShown: false,
         }}
       />
     </Stack.Navigator>
@@ -126,6 +125,32 @@ const HomeStack = () => {
         component={HomeScreen}
         options={{
           headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+// playcard stack
+const PlayCardStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="PlaycardQR"
+        component={PlayCardQRScreen}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          title: '',
+        }}
+      />
+      <Stack.Screen
+        name="PlayCard"
+        component={PlayCardScreen}
+        options={{
+          title: '',
+          headerTransparent: true,
+          animation: 'slide_from_right',
         }}
       />
     </Stack.Navigator>

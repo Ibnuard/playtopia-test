@@ -51,7 +51,7 @@ const PlayCardQRScreen = ({navigation}) => {
           title="Lihat PLAYCARD"
           buttonStyle={styles.bottomButton}
           textStyle={styles.textButton}
-          onPress={() => navigation.navigate('Profile')}
+          onPress={() => navigation.navigate('PlayCard')}
         />
       </View>
     );
