@@ -74,7 +74,7 @@ const ProfileScreen = ({navigation}) => {
         <Text style={styles.textSubtitle}>Menu Lainnya</Text>
         {OTHER_MENU.map((item, index) => {
           return (
-            <Touchable style={styles.otherButton}>
+            <Touchable key={item + index} style={styles.otherButton}>
               <Row>
                 <Row style={styles.otherButtonLeft}>
                   <Image source={item.icon} />

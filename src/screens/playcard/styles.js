@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Scaler.scaleSize(108),
-    paddingHorizontal: Size.SIZE_16,
   },
 
   bgBRONZE: {
@@ -42,13 +41,14 @@ const styles = StyleSheet.create({
     width: Size.SIZE_10,
     height: Size.SIZE_10,
     borderRadius: 5,
-    backgroundColor: Colors.COLOR_GRAY,
+    backgroundColor: Colors.COLOR_WHITE,
   },
 
   // text
   textTitle: {
     ...Typo.TypoStyle(20, Colors.COLOR_WHITE, 'bold', 'Nunito'),
     marginBottom: Size.SIZE_16,
+    paddingHorizontal: Size.SIZE_16,
   },
 });
 

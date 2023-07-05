@@ -119,6 +119,7 @@ const HomeScreen = () => {
           horizontal
           pagingEnabled
           data={data_car}
+          indicator={'dot'}
           renderItem={({item, index}) => <PromoItem />}
         />
       </View>

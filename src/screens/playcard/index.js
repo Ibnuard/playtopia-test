@@ -57,7 +57,7 @@ const PlayCardScreen = ({navigation}) => {
   // render top container
   const _renderTopContainer = () => {
     // calculatre padding to centering card
-    const divide = width / (TEST.length + 1.2);
+    const divide = width / (TEST.length + 3);
 
     return (
       <View>
@@ -67,7 +67,7 @@ const PlayCardScreen = ({navigation}) => {
           data={TEST}
           layout="default"
           renderItem={({item, index}) => <LevelCard type="large" data={item} />}
-          sliderWidth={width - 36}
+          sliderWidth={width - 10}
           itemWidth={width - divide}
           onSnapToItem={index => {
             setCurrentMode(TEST[index].type);
