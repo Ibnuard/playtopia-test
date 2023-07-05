@@ -2,8 +2,8 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {AuthStackScreen, MainScreen, SplashStack} from './navigator';
 import {AuthContext} from './context';
-import {retrieveData} from './utils/store';
-import SplashScreen from './screens/splash';
+import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {BASE_URL} from './api/api';
 
 const App = () => {
   //handle auth flow
@@ -37,27 +37,6 @@ const App = () => {
     },
   );
 
-  //   React.useEffect(() => {
-  //     // Fetch the token from storage then navigate to our appropriate place
-  //     const bootstrapAsync = async () => {
-  //       let userToken;
-
-  //       try {
-  //         userToken = await retrieveData('token', false);
-  //       } catch (e) {
-  //         // Restoring token failed
-  //       }
-
-  //       // After restoring token, we may need to validate it in production apps
-
-  //       // This will switch to the App screen or Auth screen and this loading
-  //       // screen will be unmounted and thrown away.
-  //       dispatch({type: 'RESTORE_TOKEN', token: userToken});
-  //     };
-
-  //     bootstrapAsync();
-  //   }, []);
-
   const authContext = React.useMemo(
     () => ({
       signIn: async data => {
@@ -89,17 +68,27 @@ const App = () => {
     [],
   );
 
+  // API Utils
+
+  // Initialize Apollo Client
+  const client = new ApolloClient({
+    uri: BASE_URL,
+    cache: new InMemoryCache(),
+  });
+
   return (
     <NavigationContainer>
-      <AuthContext.Provider value={authContext}>
-        {state.isLoading ? (
-          <SplashStack />
-        ) : state.userToken == null ? (
-          <AuthStackScreen />
-        ) : (
-          <MainScreen />
-        )}
-      </AuthContext.Provider>
+      <ApolloProvider client={client}>
+        <AuthContext.Provider value={authContext}>
+          {state.isLoading ? (
+            <SplashStack />
+          ) : state.userToken == null ? (
+            <AuthStackScreen />
+          ) : (
+            <MainScreen />
+          )}
+        </AuthContext.Provider>
+      </ApolloProvider>
     </NavigationContainer>
   );
 };
