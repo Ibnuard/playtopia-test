@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   largeCardContainer: {
     backgroundColor: Colors.PLAYCARD_BRONZE_CARD,
     padding: Scaler.scaleSize(20),
+    height: 180,
     overflow: 'hidden',
     elevation: 8,
   },
@@ -32,6 +33,7 @@ const styles = StyleSheet.create({
   ornamentSmall: {
     position: 'absolute',
     right: 0,
+    bottom: -20,
   },
 
   ornamentLarge: {
@@ -47,6 +49,11 @@ const styles = StyleSheet.create({
   centerContainer: {
     marginBottom: Size.SIZE_14,
     marginTop: Size.SIZE_14,
+  },
+
+  largeBottomContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
   },
 
   badgeContainer: {

@@ -48,6 +48,7 @@ const PlayCardScreen = ({navigation}) => {
           horizontal
           data={TEST}
           pagingEnabled
+          indicator={'dot'}
           renderItem={({item, index}) => (
             <LevelCard
               type="large"

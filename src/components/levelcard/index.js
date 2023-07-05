@@ -58,16 +58,17 @@ const LevelCard = ({style, type = 'small', onPress}) => {
             Transaksi <Text style={styles.textLockedValue}>10000</Text> kurang
           </Text>
         </View> */}
-        <View style={styles.gap} />
-        <Text style={styles.textName}>Nama</Text>
-        <Row>
-          <Text style={styles.textNumber}>123456</Text>
-          <View style={styles.bottomRightContainer}>
-            <View style={styles.badgeContainer}>
-              <Image source={IMAGES_RES.playcardLogoTransparent} />
+        <View style={styles.largeBottomContainer}>
+          <Text style={styles.textName}>Nama</Text>
+          <Row>
+            <Text style={styles.textNumber}>123456</Text>
+            <View style={styles.bottomRightContainer}>
+              <View style={styles.badgeContainer}>
+                <Image source={IMAGES_RES.playcardLogoTransparent} />
+              </View>
             </View>
-          </View>
-        </Row>
+          </Row>
+        </View>
       </Card>
     );
   };

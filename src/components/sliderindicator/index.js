@@ -70,7 +70,11 @@ const AnimatedFlatList = props => {
           setParentWidth(e.nativeEvent.layout.width);
         }}
       />
-      <View style={styles.indicatorContainer}>{_renderDotIndicator()}</View>
+      <View style={styles.indicatorContainer}>
+        {props.indicator == 'dot'
+          ? _renderDotIndicator()
+          : _renderSliderIndicator()}
+      </View>
     </View>
   );
 };
