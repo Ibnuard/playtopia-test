@@ -44,6 +44,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.COLOR_WHITE,
   },
 
+  infoContainer: {
+    paddingHorizontal: Size.SIZE_16,
+  },
+
   // text
   textTitle: {
     ...Typo.TypoStyle(20, Colors.COLOR_WHITE, 'bold', 'Nunito'),

@@ -2,7 +2,12 @@ import {Dimensions, Image, Text, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {useFocusEffect} from '@react-navigation/native';
-import {AnimatedFlatList, BackButton, LevelCard} from '../../components';
+import {
+  AnimatedFlatList,
+  BackButton,
+  InfoLevelCard,
+  LevelCard,
+} from '../../components';
 import StarBackground from '../../../assets/svgs/starBg';
 import {getColorByMode} from '../../utils/utils';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
@@ -88,10 +93,20 @@ const PlayCardScreen = ({navigation}) => {
     );
   };
 
+  // render info card
+  const _renderInfoCard = () => {
+    return (
+      <View style={styles.infoContainer}>
+        <InfoLevelCard />
+      </View>
+    );
+  };
+
   return (
     <View style={[styles.container, styles[`bg${currentMode}`]]}>
       {_renderDynamicBackground()}
       {_renderTopContainer()}
+      {_renderInfoCard()}
     </View>
   );
 };
