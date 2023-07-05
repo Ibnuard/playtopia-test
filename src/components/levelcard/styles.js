@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   },
 
   badgeContainer: {
-    backgroundColor: Colors.PLAYCARD_BRONZE_BADGE,
     paddingVertical: 8,
     width: Scaler.scaleSize(115),
     alignItems: 'center',
@@ -72,6 +71,15 @@ const styles = StyleSheet.create({
 
   gap: {
     height: Scaler.scaleSize(54),
+  },
+
+  // large card theme
+  largeBRONZE: {
+    backgroundColor: Colors.PLAYCARD_BRONZE_CARD,
+  },
+
+  largeSILVER: {
+    backgroundColor: Colors.PLAYCARD_SILVER_CARD,
   },
 
   // text

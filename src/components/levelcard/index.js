@@ -9,8 +9,12 @@ import Touchable from '../touchable';
 import Card from '../card';
 import OrnamentSmall from '../../../assets/svgs/ornamentSmall';
 import OrnamentLarge from '../../../assets/svgs/ornamentLarge';
+import {getColorByMode} from '../../utils/utils';
 
-const LevelCard = ({style, type = 'small', onPress}) => {
+const LevelCard = ({style, type = 'small', onPress, data}) => {
+  // handle theme color
+  const COLOR_THEME = getColorByMode(data?.type);
+
   // render small card
   const _renderSmallCard = () => {
     return (
@@ -43,14 +47,24 @@ const LevelCard = ({style, type = 'small', onPress}) => {
   // render large card
   const _renderLargeCard = () => {
     return (
-      <Card style={[styles.largeCardContainer, style]}>
-        <OrnamentLarge style={styles.ornamentLarge} />
-        <OrnamentSmall style={styles.ornamentSmall} />
+      <Card
+        style={[
+          styles.largeCardContainer,
+          style,
+          styles[`large${data?.type}`],
+        ]}>
+        <OrnamentLarge
+          style={styles.ornamentLarge}
+          color={COLOR_THEME.home_ornament}
+        />
+        <OrnamentSmall style={styles.ornamentSmall} color={COLOR_THEME.badge} />
         <Row>
           <View style={styles.largeTopLeft}>
             <Image source={IMAGES_RES.bronzeBadge} />
           </View>
-          <Text style={styles.textPlayCountLarge}>40 PLAYMILES</Text>
+          <Text style={[styles.textPlayCountLarge, {color: COLOR_THEME.text}]}>
+            40 PLAYMILES
+          </Text>
         </Row>
         {/* <View style={styles.centerContainer}>
           <Image source={IMAGES_RES.lockIcon} />
@@ -59,11 +73,15 @@ const LevelCard = ({style, type = 'small', onPress}) => {
           </Text>
         </View> */}
         <View style={styles.largeBottomContainer}>
-          <Text style={styles.textName}>Nama</Text>
+          <Text style={[styles.textName, {color: COLOR_THEME.text}]}>Nama</Text>
           <Row>
             <Text style={styles.textNumber}>123456</Text>
             <View style={styles.bottomRightContainer}>
-              <View style={styles.badgeContainer}>
+              <View
+                style={[
+                  styles.badgeContainer,
+                  {backgroundColor: COLOR_THEME.badge},
+                ]}>
                 <Image source={IMAGES_RES.playcardLogoTransparent} />
               </View>
             </View>

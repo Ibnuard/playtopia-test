@@ -1,4 +1,5 @@
 import {Colors} from '../styles';
+import {PLAYCARD_SILVER_TEXT} from '../styles/colors';
 
 // create simple log
 export const cLog = (log = '', color) => {
@@ -29,10 +30,20 @@ export const wait = timeout => {
 export const getColorByMode = mode => {
   switch (mode) {
     case 'BRONZE':
-      return Colors.PLAYCARD_BRONZE_HOME_ORNAMENT;
+      return {
+        home_ornament: Colors.PLAYCARD_BRONZE_HOME_ORNAMENT,
+        badge: Colors.PLAYCARD_BRONZE_BADGE,
+        card: Colors.PLAYCARD_BRONZE_CARD,
+        text: Colors.PLAYCARD_BRONZE_TEXT,
+      };
       break;
     case 'SILVER':
-      return Colors.PLAYCARD_SILVER_HOME_ORNAMENT;
+      return {
+        home_ornament: Colors.PLAYCARD_SILVER_HOME_ORNAMENT,
+        badge: Colors.PLAYCARD_SILVER_BADGE,
+        card: Colors.PLAYCARD_SILVER_CARD,
+        text: PLAYCARD_SILVER_TEXT,
+      };
       break;
 
     default:

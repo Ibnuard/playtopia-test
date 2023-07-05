@@ -42,7 +42,7 @@ const PlayCardScreen = ({navigation}) => {
   const _renderDynamicBackground = () => {
     return (
       <View style={styles.starBg}>
-        <StarBackground color={COLOR_THEME} />
+        <StarBackground color={COLOR_THEME.home_ornament} />
       </View>
     );
   };
@@ -61,6 +61,7 @@ const PlayCardScreen = ({navigation}) => {
           renderItem={({item, index}) => (
             <LevelCard
               type="large"
+              data={item}
               style={{width: width - 52, marginLeft: 8}}
             />
           )}
