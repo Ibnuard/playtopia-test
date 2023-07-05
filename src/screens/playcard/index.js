@@ -12,6 +12,7 @@ import {
 import StarBackground from '../../../assets/svgs/starBg';
 import {getColorByMode} from '../../utils/utils';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
+import {ScrollView} from 'react-native';
 
 const PlayCardScreen = ({navigation}) => {
   const [currentMode, setCurrentMode] = React.useState('BRONZE');
@@ -39,6 +40,16 @@ const PlayCardScreen = ({navigation}) => {
       point: 10000,
     },
   ];
+
+  // example feature
+  const FEATURE_LIST = {
+    BRONZE: ['Earn 1.2x PLAYMILES more', '5% Discount for Chuwi beverages'],
+    SILVER: [
+      'Level up bonus 15,000 PLAYMILES',
+      'Earn 1.5x PLAYMILES more',
+      '20% bonus balance for Amazone Topup',
+    ],
+  };
 
   // set back button
   useFocusEffect(
@@ -108,7 +119,16 @@ const PlayCardScreen = ({navigation}) => {
     return (
       <View style={styles.featureContainer}>
         <Text style={styles.textSubtitle}>Keuntungan Bronze Member</Text>
-        <FeatureCard />
+        {FEATURE_LIST[currentMode].map((item, index) => {
+          return (
+            <FeatureCard
+              key={item + index}
+              title={item}
+              isLocked={false}
+              type={currentMode}
+            />
+          );
+        })}
       </View>
     );
   };
@@ -117,9 +137,11 @@ const PlayCardScreen = ({navigation}) => {
   return (
     <View style={[styles.container, styles[`bg${currentMode}`]]}>
       {_renderDynamicBackground()}
-      {_renderTopContainer()}
-      {_renderInfoCardContainer()}
-      {_renderFeatureContainer()}
+      <ScrollView>
+        {_renderTopContainer()}
+        {_renderInfoCardContainer()}
+        {_renderFeatureContainer()}
+      </ScrollView>
     </View>
   );
 };

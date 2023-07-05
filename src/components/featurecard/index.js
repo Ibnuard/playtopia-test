@@ -7,16 +7,16 @@ import styles from './styles';
 import Row from '../row';
 import {IMAGES_RES} from '../../utils/images';
 
-const FeatureCard = ({data}) => {
+const FeatureCard = ({type, title, isLocked}) => {
   // handle theme color
-  const COLOR_THEME = getColorByMode(data?.type);
+  const COLOR_THEME = getColorByMode(type);
 
   return (
-    <>
+    <View style={styles.parent}>
       <View
         style={[
           {backgroundColor: COLOR_THEME.feature},
-          styles.containerLocked,
+          styles[`container${isLocked ? 'Locked' : ''}`],
         ]}>
         <OrnamentLarge
           style={styles.ornamentLarge}
@@ -24,12 +24,12 @@ const FeatureCard = ({data}) => {
         />
         <OrnamentSmall style={styles.ornamentSmall} color={COLOR_THEME.badge} />
         <Row style={styles.rowContainer}>
-          <Text style={styles.textTitle}>Hola kuy</Text>
-          <View style={styles.lockedContainer}></View>
+          <Text style={styles.textTitle}>{title}</Text>
+          <View style={styles.lockedContainer} />
         </Row>
       </View>
       <Image source={IMAGES_RES.lockIconDark} style={styles.lockIcon} />
-    </>
+    </View>
   );
 };
 

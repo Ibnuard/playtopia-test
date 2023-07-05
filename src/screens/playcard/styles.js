@@ -4,7 +4,7 @@ import {Colors, Scaler, Size, Typo} from '../../styles';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Scaler.scaleSize(108),
+    paddingTop: Scaler.scaleSize(98),
   },
 
   bgBRONZE: {
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
 
   textSubtitle: {
     ...Typo.TypoStyle(20, Colors.COLOR_WHITE, 'bold'),
+    paddingVertical: 8,
   },
 });
 

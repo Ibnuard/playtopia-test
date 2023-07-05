@@ -2,6 +2,9 @@ import {StyleSheet} from 'react-native';
 import {Colors, Scaler, Size, Typo} from '../../styles';
 
 const styles = StyleSheet.create({
+  parent: {
+    marginTop: Size.SIZE_16,
+  },
   container: {
     overflow: 'hidden',
     height: Scaler.scaleSize(100),
@@ -42,8 +45,8 @@ const styles = StyleSheet.create({
 
   lockIcon: {
     position: 'absolute',
-    right: 40,
-    top: 62,
+    right: 30,
+    top: 30,
   },
 
   // text
