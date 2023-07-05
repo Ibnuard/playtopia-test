@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.PLAYCARD_BRONZE_CARD,
     padding: Scaler.scaleSize(20),
     overflow: 'hidden',
+    elevation: 8,
   },
 
   ornamentSmall: {
@@ -39,10 +40,59 @@ const styles = StyleSheet.create({
     top: -80,
   },
 
+  largeTopLeft: {
+    flex: 1,
+  },
+
+  centerContainer: {
+    marginBottom: Size.SIZE_14,
+    marginTop: Size.SIZE_14,
+  },
+
+  badgeContainer: {
+    backgroundColor: Colors.PLAYCARD_BRONZE_BADGE,
+    paddingVertical: 8,
+    width: Scaler.scaleSize(115),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 16,
+  },
+
+  bottomRightContainer: {
+    flex: 1,
+    alignItems: 'flex-end',
+  },
+
   // text
   textPlayCount: {
     ...Typo.TypoStyle(12, Colors.COLOR_WHITE, 'normal', 'Nunito'),
     marginRight: Size.SIZE_10,
+  },
+
+  textPlayCountLarge: {
+    ...Typo.TypoStyle(12, Colors.PLAYCARD_BRONZE_TEXT, 'normal', 'Nunito'),
+  },
+
+  textName: {
+    ...Typo.TypoStyle(
+      Size.FONT_18,
+      Colors.PLAYCARD_BRONZE_TEXT,
+      'normal',
+      'Nunito',
+    ),
+  },
+
+  textNumber: {
+    ...Typo.TypoStyle('normal', Colors.COLOR_WHITE, 'bold', 'Nunito'),
+  },
+
+  textLockedDesc: {
+    ...Typo.TypoStyle('normal', Colors.COLOR_BLACK, 'normal', 'Nunito'),
+    marginTop: Size.SIZE_10,
+  },
+
+  textLockedValue: {
+    ...Typo.TypoStyle('normal', Colors.COLOR_BLACK, 'bold', 'Nunito'),
   },
 });
 

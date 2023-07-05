@@ -129,6 +129,7 @@ const ProfileStack = () => {
         options={{
           title: '',
           headerTransparent: true,
+          animation: 'slide_from_right',
         }}
       />
     </Stack.Navigator>

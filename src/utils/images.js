@@ -40,4 +40,5 @@ export const IMAGES_RES = {
     back: require('../../assets/images/back.png'),
   },
   playcardBackground: require('../../assets/images/playCardBg.png'),
+  lockIcon: require('../../assets/images/ic_lock.png'),
 };

@@ -47,14 +47,24 @@ const LevelCard = ({style, type = 'small', onPress}) => {
         <OrnamentLarge style={styles.ornamentLarge} />
         <OrnamentSmall style={styles.ornamentSmall} />
         <Row>
-          <Image source={IMAGES_RES.bronzeBadge} />
-          <Text>40 PLAYMILES</Text>
+          <View style={styles.largeTopLeft}>
+            <Image source={IMAGES_RES.bronzeBadge} />
+          </View>
+          <Text style={styles.textPlayCountLarge}>40 PLAYMILES</Text>
         </Row>
-        <Text>Nama</Text>
+        <View style={styles.centerContainer}>
+          <Image source={IMAGES_RES.lockIcon} />
+          <Text style={styles.textLockedDesc}>
+            Transaksi <Text style={styles.textLockedValue}>10000</Text> kurang
+          </Text>
+        </View>
+        <Text style={styles.textName}>Nama</Text>
         <Row>
-          <Text>123456</Text>
-          <View>
-            <Image source={IMAGES_RES.playcardLogoTransparent} />
+          <Text style={styles.textNumber}>123456</Text>
+          <View style={styles.bottomRightContainer}>
+            <View style={styles.badgeContainer}>
+              <Image source={IMAGES_RES.playcardLogoTransparent} />
+            </View>
           </View>
         </Row>
       </Card>

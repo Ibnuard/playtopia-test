@@ -22,3 +22,4 @@ export const COLOR_TRANSPARENT = 'transparent';
 export const PLAYCARD_BRONZE = '#FC986A';
 export const PLAYCARD_BRONZE_CARD = '#FCAA84';
 export const PLAYCARD_BRONZE_TEXT = '#682100';
+export const PLAYCARD_BRONZE_BADGE = '#FFB898';
