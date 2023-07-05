@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StatusBar,
-  FlatList,
-  Dimensions,
-  ScrollView,
-} from 'react-native';
+import {View, Text, Image, StatusBar, ScrollView} from 'react-native';
 import styles from './styles';
 import {IMAGES_RES} from '../../utils/images';
 import {
@@ -19,9 +11,18 @@ import {
   SearchBar,
 } from '../../components';
 import Touchable from '../../components/touchable';
+import {useLazyQuery, useQuery} from '@apollo/client';
+import {ALL_CITIES_QUERY} from '../../api/queries';
 
 const HomeScreen = () => {
-  const TEST_CITY = [1, 2, 3, 4, 5, 6];
+  // fetch all cities
+  const {loading, data} = useQuery(ALL_CITIES_QUERY);
+
+  // ======================================================
+  //
+  // ================= GAP ================================
+  //
+  // ======================================================
 
   // render background
   const _renderBackground = () => {
@@ -99,8 +100,11 @@ const HomeScreen = () => {
           <AnimatedFlatList
             containerStyle={styles.cityListContainer}
             horizontal
-            data={TEST_CITY}
-            renderItem={({item, index}) => <CityCard />}
+            scrollEnabled={!loading}
+            data={data ? data.allCities : [1, 2, 3, 4, 5, 6]}
+            renderItem={({item, index}) => (
+              <CityCard data={item} loading={loading} />
+            )}
           />
         </Card>
       </View>

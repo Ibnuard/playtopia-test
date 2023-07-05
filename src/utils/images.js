@@ -45,4 +45,5 @@ export const IMAGES_RES = {
   lockIconDark: require('../../assets/images/ic_lock_dark.png'),
   rpIcon: require('../../assets/images/ic_rp.png'),
   exampleQR: require('../../assets/images/ex_qr.png'),
+  exampleCity: require('../../assets/images/ex_city.png'),
 };
