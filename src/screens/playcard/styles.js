@@ -48,11 +48,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: Size.SIZE_16,
   },
 
+  featureContainer: {
+    padding: Size.SIZE_16,
+  },
+
   // text
   textTitle: {
     ...Typo.TypoStyle(20, Colors.COLOR_WHITE, 'bold', 'Nunito'),
     marginBottom: Size.SIZE_16,
     paddingHorizontal: Size.SIZE_16,
+  },
+
+  textSubtitle: {
+    ...Typo.TypoStyle(20, Colors.COLOR_WHITE, 'bold'),
   },
 });
 

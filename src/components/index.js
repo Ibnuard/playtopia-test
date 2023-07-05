@@ -13,6 +13,7 @@ import LevelCard from './levelcard';
 import VoucherCard from './vouchercard';
 import BackButton from './backbutton';
 import InfoLevelCard from './infolevelcard';
+import FeatureCard from './featurecard';
 
 export {
   Button,
@@ -30,4 +31,5 @@ export {
   VoucherCard,
   BackButton,
   InfoLevelCard,
+  FeatureCard,
 };

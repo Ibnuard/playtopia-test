@@ -5,6 +5,7 @@ import {useFocusEffect} from '@react-navigation/native';
 import {
   AnimatedFlatList,
   BackButton,
+  FeatureCard,
   InfoLevelCard,
   LevelCard,
 } from '../../components';
@@ -94,7 +95,7 @@ const PlayCardScreen = ({navigation}) => {
   };
 
   // render info card
-  const _renderInfoCard = () => {
+  const _renderInfoCardContainer = () => {
     return (
       <View style={styles.infoContainer}>
         <InfoLevelCard />
@@ -102,11 +103,23 @@ const PlayCardScreen = ({navigation}) => {
     );
   };
 
+  // render bottom container
+  const _renderFeatureContainer = () => {
+    return (
+      <View style={styles.featureContainer}>
+        <Text style={styles.textSubtitle}>Keuntungan Bronze Member</Text>
+        <FeatureCard />
+      </View>
+    );
+  };
+
+  // main render
   return (
     <View style={[styles.container, styles[`bg${currentMode}`]]}>
       {_renderDynamicBackground()}
       {_renderTopContainer()}
-      {_renderInfoCard()}
+      {_renderInfoCardContainer()}
+      {_renderFeatureContainer()}
     </View>
   );
 };

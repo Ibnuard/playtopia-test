@@ -34,6 +34,7 @@ export const getColorByMode = mode => {
         home_ornament: Colors.PLAYCARD_BRONZE_HOME_ORNAMENT,
         badge: Colors.PLAYCARD_BRONZE_BADGE,
         card: Colors.PLAYCARD_BRONZE_CARD,
+        feature: Colors.PLAYCARD_BRONZE_CARD_DARK,
         text: Colors.PLAYCARD_BRONZE_TEXT,
       };
       break;
@@ -42,11 +43,19 @@ export const getColorByMode = mode => {
         home_ornament: Colors.PLAYCARD_SILVER_HOME_ORNAMENT,
         badge: Colors.PLAYCARD_SILVER_BADGE,
         card: Colors.PLAYCARD_SILVER_CARD,
+        feature: Colors.PLAYCARD_SILVER_CARD_DARK,
         text: PLAYCARD_SILVER_TEXT,
       };
       break;
 
     default:
+      return {
+        home_ornament: Colors.PLAYCARD_BRONZE_HOME_ORNAMENT,
+        badge: Colors.PLAYCARD_BRONZE_BADGE,
+        card: Colors.PLAYCARD_BRONZE_CARD,
+        feature: Colors.PLAYCARD_BRONZE_CARD_DARK,
+        text: Colors.PLAYCARD_BRONZE_TEXT,
+      };
       break;
   }
 };
