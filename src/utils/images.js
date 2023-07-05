@@ -29,4 +29,10 @@ export const IMAGES_RES = {
   playmilesLogo: require('../../assets/images/playmilesLogo.png'),
   voucherIcon: require('../../assets/images/voucherIcon.png'),
   voucherBackground: require('../../assets/images/voucherBg.png'),
+  profileIcon: {
+    security: require('../../assets/images/ic_security.png'),
+    notification: require('../../assets/images/ic_notif.png'),
+    help: require('../../assets/images/ic_help.png'),
+    other: require('../../assets/images/ic_other.png'),
+  },
 };

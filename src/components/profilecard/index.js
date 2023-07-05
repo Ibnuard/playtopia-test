@@ -18,7 +18,7 @@ const ProfileCard = () => {
           </Touchable>
         </View>
 
-        <View style={styles.childBottom}>
+        <Touchable style={styles.childBottom}>
           <Row>
             <View style={styles.bottomLeftChild}>
               <Text style={styles.textChildTitle}>Title</Text>
@@ -30,7 +30,7 @@ const ProfileCard = () => {
               size={24}
             />
           </Row>
-        </View>
+        </Touchable>
       </Card>
     </View>
   );

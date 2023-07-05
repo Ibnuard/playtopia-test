@@ -5,10 +5,11 @@ import styles from './styles';
 import Row from '../row';
 import Icon from 'react-native-vector-icons/Entypo';
 import {Colors} from '../../styles';
+import Touchable from '../touchable';
 
 const VoucherCard = ({style}) => {
   return (
-    <View style={[styles.container, style]}>
+    <Touchable style={[styles.container, style]}>
       <Image
         source={IMAGES_RES.voucherBackground}
         style={styles.cardBackground}
@@ -30,7 +31,7 @@ const VoucherCard = ({style}) => {
           />
         </Row>
       </View>
-    </View>
+    </Touchable>
   );
 };
 
