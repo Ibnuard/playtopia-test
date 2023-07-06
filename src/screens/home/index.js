@@ -13,10 +13,15 @@ import {
 import Touchable from '../../components/touchable';
 import {useLazyQuery, useQuery} from '@apollo/client';
 import {ALL_CITIES_QUERY} from '../../api/queries';
+import {useSelector} from 'react-redux';
+import {selectUser} from '../../store/slices/userSlice';
 
 const HomeScreen = () => {
   // fetch all cities
   const {loading, data} = useQuery(ALL_CITIES_QUERY);
+
+  // get user data from redux
+  const {userData} = useSelector(selectUser);
 
   // ======================================================
   //

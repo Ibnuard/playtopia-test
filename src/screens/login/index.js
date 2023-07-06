@@ -4,9 +4,19 @@ import {Button} from '../../components';
 import {AuthContext} from '../../context';
 import styles from './styles';
 import {useDispatch, useSelector} from 'react-redux';
+import {setSignIn} from '../../store/slices/userSlice';
 
 const LoginScreen = ({navigation}) => {
   const dispatch = useDispatch();
+
+  const SAMPLE_USER = {
+    BRONZE: {
+      name: 'Naura Hasna',
+      number_id: 123456,
+      point: 1000,
+      token: '1234token',
+    },
+  };
 
   return (
     <View style={styles.container}>
@@ -16,7 +26,7 @@ const LoginScreen = ({navigation}) => {
         upperCase={false}
         isLoading={false}
         disabled={false}
-        onPress={() => signIn()}
+        onPress={() => dispatch(setSignIn({user: SAMPLE_USER['BRONZE']}))}
       />
     </View>
   );
