@@ -11,7 +11,7 @@ import OrnamentSmall from '../../../assets/svgs/ornamentSmall';
 import OrnamentLarge from '../../../assets/svgs/ornamentLarge';
 import {getColorByMode} from '../../utils/utils';
 
-const LevelCard = ({style, type = 'small', onPress, data}) => {
+const LevelCard = ({style, type = 'small', onPress, data, user}) => {
   // handle theme color
   const COLOR_THEME = getColorByMode(data?.type);
 
@@ -73,9 +73,11 @@ const LevelCard = ({style, type = 'small', onPress, data}) => {
           </Text>
         </View> */}
         <View style={styles.largeBottomContainer}>
-          <Text style={[styles.textName, {color: COLOR_THEME.text}]}>Nama</Text>
+          <Text style={[styles.textName, {color: COLOR_THEME.text}]}>
+            {user?.name}
+          </Text>
           <Row>
-            <Text style={styles.textNumber}>123456</Text>
+            <Text style={styles.textNumber}>{user?.number_id}</Text>
             <View style={styles.bottomRightContainer}>
               <View
                 style={[

@@ -13,6 +13,8 @@ import StarBackground from '../../../assets/svgs/starBg';
 import {getColorByMode} from '../../utils/utils';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {ScrollView} from 'react-native';
+import {useSelector} from 'react-redux';
+import {selectUser} from '../../store/slices/userSlice';
 
 const PlayCardScreen = ({navigation}) => {
   const [currentMode, setCurrentMode] = React.useState('BRONZE');
@@ -25,19 +27,25 @@ const PlayCardScreen = ({navigation}) => {
   // theme var
   const COLOR_THEME = getColorByMode(currentMode);
 
+  // get user data drom redux
+  const {userData} = useSelector(selectUser);
+
   // test member
-  const TEST = [
+  const LEVEL_LIST = [
     {
       type: 'BRONZE',
       point: 1000,
+      title: 'Bronze',
+    },
+    {
+      type: 'SILVER',
+      point: 5000,
+      title: 'Silver',
     },
     {
       type: 'SILVER',
       point: 10000,
-    },
-    {
-      type: 'SILVER',
-      point: 10000,
+      title: 'Gold',
     },
   ];
 
@@ -74,25 +82,27 @@ const PlayCardScreen = ({navigation}) => {
   // render top container
   const _renderTopContainer = () => {
     // calculatre padding to centering card
-    const divide = width / (TEST.length + 3);
+    const divide = width / (LEVEL_LIST.length + 3);
 
     return (
       <View>
         <Text style={styles.textTitle}>PLAYCARD</Text>
         <Carousel
           ref={carousel}
-          data={TEST}
+          data={LEVEL_LIST}
           layout="default"
-          renderItem={({item, index}) => <LevelCard type="large" data={item} />}
+          renderItem={({item, index}) => (
+            <LevelCard type="large" data={item} user={userData} />
+          )}
           sliderWidth={width - 10}
           itemWidth={width - divide}
           onSnapToItem={index => {
-            setCurrentMode(TEST[index].type);
+            setCurrentMode(LEVEL_LIST[index].type);
             setActiveSlide(index);
           }}
         />
         <Pagination
-          dotsLength={TEST.length}
+          dotsLength={LEVEL_LIST.length}
           activeDotIndex={activeSlide}
           containerStyle={styles.pagination}
           dotContainerStyle={styles.dotContainer}
@@ -109,7 +119,11 @@ const PlayCardScreen = ({navigation}) => {
   const _renderInfoCardContainer = () => {
     return (
       <View style={styles.infoContainer}>
-        <InfoLevelCard />
+        <InfoLevelCard
+          activeMode={activeSlide}
+          level={LEVEL_LIST}
+          user={userData}
+        />
       </View>
     );
   };
@@ -118,7 +132,9 @@ const PlayCardScreen = ({navigation}) => {
   const _renderFeatureContainer = () => {
     return (
       <View style={styles.featureContainer}>
-        <Text style={styles.textSubtitle}>Keuntungan Bronze Member</Text>
+        <Text style={styles.textSubtitle}>
+          Keuntungan {LEVEL_LIST[activeSlide].title} Member
+        </Text>
         {FEATURE_LIST[currentMode].map((item, index) => {
           return (
             <FeatureCard

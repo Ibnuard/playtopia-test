@@ -59,3 +59,9 @@ export const getColorByMode = mode => {
       break;
   }
 };
+
+//Rupiah currency formater
+export function formatRupiah(number = 0, useRp = true) {
+  let rupiah = number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+  return useRp ? 'Rp ' + rupiah : rupiah;
+}
