@@ -92,7 +92,13 @@ const PlayCardScreen = ({navigation}) => {
           data={LEVEL_LIST}
           layout="default"
           renderItem={({item, index}) => (
-            <LevelCard type="large" data={item} user={userData} />
+            <LevelCard
+              type="large"
+              data={item}
+              user={userData}
+              activeMode={activeSlide}
+              level={LEVEL_LIST[index]}
+            />
           )}
           sliderWidth={width - 10}
           itemWidth={width - divide}

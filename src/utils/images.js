@@ -24,7 +24,11 @@ export const IMAGES_RES = {
     account_inactive: require('../../assets/images/ic_account_inactive.png'),
   },
   bronzeCard: require('../../assets/images/bronzeCard.png'),
-  bronzeBadge: require('../../assets/images/levelBronze.png'),
+  badge: {
+    BRONZE: require('../../assets/images/levelBronze.png'),
+    SILVER: require('../../assets/images/levelSilver.png'),
+    GOLD: require('../../assets/images/levelGold.png'),
+  },
   playcardLogo: require('../../assets/images/playcardLogo.png'),
   playcardLogoTransparent: require('../../assets/images/playCardnoBg.png'),
   playmilesLogo: require('../../assets/images/playmilesLogo.png'),

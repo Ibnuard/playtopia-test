@@ -9,9 +9,9 @@ import Touchable from '../touchable';
 import Card from '../card';
 import OrnamentSmall from '../../../assets/svgs/ornamentSmall';
 import OrnamentLarge from '../../../assets/svgs/ornamentLarge';
-import {getColorByMode} from '../../utils/utils';
+import {formatRupiah, getColorByMode} from '../../utils/utils';
 
-const LevelCard = ({style, type = 'small', onPress, data, user}) => {
+const LevelCard = ({style, type = 'small', onPress, data, user, level}) => {
   // handle theme color
   const COLOR_THEME = getColorByMode(data?.type);
 
@@ -28,7 +28,7 @@ const LevelCard = ({style, type = 'small', onPress, data, user}) => {
           <Row>
             <View style={styles.childLeft}>
               <Image source={IMAGES_RES.playcardLogo} />
-              <Image source={IMAGES_RES.bronzeBadge} style={styles.badge} />
+              <Image source={IMAGES_RES.badge.bronze} style={styles.badge} />
             </View>
             <Row>
               <Text style={styles.textPlayCount}>40 PLAYMILES</Text>
@@ -46,6 +46,16 @@ const LevelCard = ({style, type = 'small', onPress, data, user}) => {
 
   // render large card
   const _renderLargeCard = () => {
+    // LARGE VARIABLE
+
+    // user point
+    const USER_POINT = user?.point;
+    const LEVEL_POINT = level?.point;
+
+    const IS_LOCKED = USER_POINT < LEVEL_POINT;
+
+    const DISTANCE = LEVEL_POINT - USER_POINT;
+
     return (
       <Card
         style={[
@@ -60,24 +70,34 @@ const LevelCard = ({style, type = 'small', onPress, data, user}) => {
         <OrnamentSmall style={styles.ornamentSmall} color={COLOR_THEME.badge} />
         <Row>
           <View style={styles.largeTopLeft}>
-            <Image source={IMAGES_RES.bronzeBadge} />
+            <Image source={IMAGES_RES.badge[level.type]} />
           </View>
           <Text style={[styles.textPlayCountLarge, {color: COLOR_THEME.text}]}>
             40 PLAYMILES
           </Text>
         </Row>
-        {/* <View style={styles.centerContainer}>
-          <Image source={IMAGES_RES.lockIcon} />
-          <Text style={styles.textLockedDesc}>
-            Transaksi <Text style={styles.textLockedValue}>10000</Text> kurang
-          </Text>
-        </View> */}
+        {IS_LOCKED && (
+          <View style={styles.centerContainer}>
+            <Image source={IMAGES_RES.lockIcon} />
+            <Text style={styles.textLockedDesc}>
+              Lakukan transaksi{' '}
+              <Text style={styles.textLockedValue}>
+                {formatRupiah(DISTANCE)}
+              </Text>{' '}
+              lagi untuk menjadi {level.title} Member
+            </Text>
+          </View>
+        )}
         <View style={styles.largeBottomContainer}>
-          <Text style={[styles.textName, {color: COLOR_THEME.text}]}>
-            {user?.name}
-          </Text>
+          {!IS_LOCKED && (
+            <Text style={[styles.textName, {color: COLOR_THEME.text}]}>
+              {user?.name}
+            </Text>
+          )}
           <Row>
-            <Text style={styles.textNumber}>{user?.number_id}</Text>
+            {!IS_LOCKED && (
+              <Text style={styles.textNumber}>{user?.number_id}</Text>
+            )}
             <View style={styles.bottomRightContainer}>
               <View
                 style={[

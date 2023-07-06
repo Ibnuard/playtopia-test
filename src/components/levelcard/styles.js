@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   largeCardContainer: {
     backgroundColor: Colors.PLAYCARD_BRONZE_CARD,
     padding: Scaler.scaleSize(20),
-    height: Scaler.scaleSize(180),
+    height: Scaler.scaleSize(215),
     overflow: 'hidden',
     elevation: 8,
   },
