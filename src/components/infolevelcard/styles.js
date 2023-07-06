@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   },
   topContainer: {
     padding: SIZE_12,
+    marginRight: Size.SIZE_12,
   },
   bottomContainer: {
     borderRadius: 16,

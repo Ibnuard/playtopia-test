@@ -140,8 +140,10 @@ const PlayCardScreen = ({navigation}) => {
             <FeatureCard
               key={item + index}
               title={item}
-              isLocked={false}
+              user={userData}
               type={currentMode}
+              level={LEVEL_LIST}
+              activeMode={activeSlide}
             />
           );
         })}
