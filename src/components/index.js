@@ -14,6 +14,7 @@ import VoucherCard from './vouchercard';
 import BackButton from './backbutton';
 import InfoLevelCard from './infolevelcard';
 import FeatureCard from './featurecard';
+import BottomSheet from './bottomsheet';
 
 export {
   Button,
@@ -32,4 +33,5 @@ export {
   BackButton,
   InfoLevelCard,
   FeatureCard,
+  BottomSheet,
 };
