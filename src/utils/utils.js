@@ -1,5 +1,5 @@
 import {Colors} from '../styles';
-import {PLAYCARD_SILVER_TEXT} from '../styles/colors';
+import {PLAYCARD_GOLD_TEXT, PLAYCARD_SILVER_TEXT} from '../styles/colors';
 
 // create simple log
 export const cLog = (log = '', color) => {
@@ -45,6 +45,15 @@ export const getColorByMode = mode => {
         card: Colors.PLAYCARD_SILVER_CARD,
         feature: Colors.PLAYCARD_SILVER_CARD_DARK,
         text: PLAYCARD_SILVER_TEXT,
+      };
+      break;
+    case 'GOLD':
+      return {
+        home_ornament: Colors.PLAYCARD_GOLD_HOME_ORNAMENT,
+        badge: Colors.PLAYCARD_GOLD_BADGE,
+        card: Colors.PLAYCARD_GOLD_CARD,
+        feature: Colors.PLAYCARD_GOLD_CARD_DARK,
+        text: PLAYCARD_GOLD_TEXT,
       };
       break;
 

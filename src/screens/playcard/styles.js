@@ -15,6 +15,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.PLAYCARD_SILVER,
   },
 
+  bgGOLD: {
+    backgroundColor: Colors.PLAYCARD_GOLD,
+  },
+
   starBg: {
     position: 'absolute',
     right: -100,

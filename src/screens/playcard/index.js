@@ -43,7 +43,7 @@ const PlayCardScreen = ({navigation}) => {
       title: 'Silver',
     },
     {
-      type: 'SILVER',
+      type: 'GOLD',
       point: 10000,
       title: 'Gold',
     },
@@ -56,6 +56,12 @@ const PlayCardScreen = ({navigation}) => {
       'Level up bonus 15,000 PLAYMILES',
       'Earn 1.5x PLAYMILES more',
       '20% bonus balance for Amazone Topup',
+    ],
+    GOLD: [
+      'Level up bonus 25,000 PLAYMILES',
+      'Earn 2.0x PLAYMILES more',
+      '30% bonus balance for Amazone Topup',
+      'Exclusive Merchandise',
     ],
   };
 

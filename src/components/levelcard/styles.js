@@ -84,6 +84,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.PLAYCARD_SILVER_CARD,
   },
 
+  largeGOLD: {
+    backgroundColor: Colors.PLAYCARD_GOLD_CARD,
+  },
+
   // text
   textPlayCount: {
     ...Typo.TypoStyle(12, Colors.COLOR_WHITE, 'normal', 'Nunito'),
