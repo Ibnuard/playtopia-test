@@ -5,12 +5,17 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Touchable from '../../../touchable';
 import {Colors} from '../../../../styles';
 import Row from '../../../row';
-import {Switch} from 'react-native-switch';
+import CustomSwitch from '../../../switch';
+import Button from '../../../button';
 
 const BuyTicketModal = () => {
   // handle if toggle gift switch
   const [isGift, setIsGift] = React.useState(false);
   const toggleGiftSwitch = () => setIsGift(previousState => !previousState);
+
+  // handle if toggle gift switch
+  const [isGroup, setIsGroup] = React.useState(false);
+  const toggleGroupSwitch = () => setIsGroup(previousState => !previousState);
 
   // main render
   return (
@@ -26,22 +31,21 @@ const BuyTicketModal = () => {
             <Text style={styles.textSeeCalendar}>Lihat Kalender</Text>
           </Touchable>
         </Row>
-        <Switch
-          value={isGift}
-          onValueChange={val => toggleGiftSwitch()}
-          disabled={false}
-          circleSize={24}
-          backgroundActive={Colors.COLOR_PRIMARY_50}
-          backgroundInactive={Colors.COLOR_DARK_GRAY}
-          circleActiveColor={Colors.COLOR_PRIMARY}
-          circleInActiveColor={Colors.COLOR_WHITE}
-          circleBorderActiveColor={Colors.COLOR_PRIMARY_50}
-          circleBorderInactiveColor={Colors.COLOR_DARK_GRAY}
-          circleBorderWidth={2}
-          changeValueImmediately={true}
-          renderActiveText={false}
-          renderInActiveText={false}
-        />
+        <Row style={styles.switchRow}>
+          <Text style={styles.textSwitchTitle}>Beli sebagai gift</Text>
+          <CustomSwitch
+            value={isGift}
+            onValueChange={() => toggleGiftSwitch()}
+          />
+        </Row>
+        <Row style={styles.switchRow}>
+          <Text style={styles.textSwitchTitle}>Pembelian untuk kelompok</Text>
+          <CustomSwitch
+            value={isGroup}
+            onValueChange={() => toggleGroupSwitch()}
+          />
+        </Row>
+        <Button type="secondary" title="Lanjutkan" />
       </View>
     </View>
   );

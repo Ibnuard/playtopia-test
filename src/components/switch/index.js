@@ -1,8 +1,9 @@
 import {Text, View} from 'react-native';
 import React from 'react';
 import {Switch} from 'react-native-switch';
+import {Colors} from '../../styles';
 
-const CustomSwitch = (value, onValueChange) => {
+const CustomSwitch = ({value, onValueChange}) => {
   return (
     <Switch
       value={value}

@@ -15,6 +15,10 @@ const styles = StyleSheet.create({
     paddingVertical: Size.SIZE_18,
   },
 
+  switchRow: {
+    paddingVertical: Size.SIZE_12,
+  },
+
   // text
   textTitle: {
     ...Typo.TypoStyle(20, Colors.COLOR_BLACK, 'bold'),
@@ -27,6 +31,11 @@ const styles = StyleSheet.create({
 
   textSeeCalendar: {
     ...Typo.TypoStyle('normal', Colors.COLOR_PRIMARY, 'normal', 'Nunito'),
+  },
+
+  textSwitchTitle: {
+    ...Typo.TypoStyle(12, Colors.COLOR_BLACK, 'bold', 'Nunito'),
+    flex: 1,
   },
 });
 
