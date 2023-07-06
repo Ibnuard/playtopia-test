@@ -9,7 +9,7 @@ import CustomSwitch from '../../../switch';
 import Button from '../../../button';
 import Counter from '../../../counter';
 
-const BuyTicketModal = () => {
+const BuyTicketModal = ({onExit}) => {
   // handle if toggle gift switch
   const [isGift, setIsGift] = React.useState(false);
   const toggleGiftSwitch = () => setIsGift(previousState => !previousState);
@@ -21,7 +21,7 @@ const BuyTicketModal = () => {
   // main render
   return (
     <View style={styles.container}>
-      <Touchable style={styles.header}>
+      <Touchable style={styles.header} onPress={onExit}>
         <Icon name="close" size={24} color={Colors.COLOR_BLACK} />
       </Touchable>
       <View style={styles.content}>
@@ -46,8 +46,13 @@ const BuyTicketModal = () => {
             onValueChange={() => toggleGroupSwitch()}
           />
         </Row>
-        <Counter />
-        <Button type="secondary" title="Lanjutkan" />
+        <Row style={styles.switchRow}>
+          <Text style={styles.textSwitchTitle}>Jumlah Anak</Text>
+          <Counter />
+        </Row>
+        <View style={styles.buttonContainer}>
+          <Button type="secondary" title="Lanjutkan" />
+        </View>
       </View>
     </View>
   );

@@ -34,7 +34,7 @@ const PlaygroundScreen = () => {
         visible={modalVisible}
         onBackButtonPress={() => setModalVisible(false)}
         onSwipeDone={() => setModalVisible(false)}>
-        <BuyTicketModal />
+        <BuyTicketModal onExit={() => setModalVisible(false)} />
       </BottomSheet>
     );
   };

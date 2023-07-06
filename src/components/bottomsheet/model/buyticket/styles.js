@@ -19,6 +19,10 @@ const styles = StyleSheet.create({
     paddingVertical: Size.SIZE_12,
   },
 
+  buttonContainer: {
+    marginTop: Size.SIZE_16,
+  },
+
   // text
   textTitle: {
     ...Typo.TypoStyle(20, Colors.COLOR_BLACK, 'bold'),
