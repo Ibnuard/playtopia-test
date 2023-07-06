@@ -38,7 +38,16 @@ export const SplashStack = () => {
 export const AuthStackScreen = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="SignIn" component={LoginScreen} />
+      <Stack.Screen
+        name="SignIn"
+        component={LoginScreen}
+        options={{
+          title: 'Login',
+          headerTitleStyle: {
+            ...Typo.TypoStyle(24, Colors.COLOR_BLACK, 'bold'),
+          },
+        }}
+      />
       <Stack.Screen name="SignUp" component={LoginScreen} />
     </Stack.Navigator>
   );

@@ -31,7 +31,7 @@ const LoginScreen = ({navigation}) => {
     <View style={styles.container}>
       <Text>LoginScreen</Text>
       <Button
-        title="Go to main screen kuy"
+        title="Login as Bronze User"
         upperCase={false}
         isLoading={false}
         disabled={false}

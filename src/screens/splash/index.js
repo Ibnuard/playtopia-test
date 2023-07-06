@@ -32,7 +32,7 @@ const SplashScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>SplashScreen</Text>
+      <Text style={styles.textTitle}>Playtopia Test</Text>
     </View>
   );
 };
