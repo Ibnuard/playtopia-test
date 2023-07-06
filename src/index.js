@@ -4,6 +4,8 @@ import {AuthStackScreen, MainScreen, SplashStack} from './navigator';
 import {AuthContext} from './context';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import {BASE_URL} from './api/api';
+import {Provider} from 'react-redux';
+import {store} from './store';
 
 const App = () => {
   //handle auth flow
@@ -78,17 +80,19 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <ApolloProvider client={client}>
-        <AuthContext.Provider value={authContext}>
-          {state.isLoading ? (
-            <SplashStack />
-          ) : state.userToken == null ? (
-            <AuthStackScreen />
-          ) : (
-            <MainScreen />
-          )}
-        </AuthContext.Provider>
-      </ApolloProvider>
+      <Provider store={store}>
+        <ApolloProvider client={client}>
+          <AuthContext.Provider value={authContext}>
+            {state.isLoading ? (
+              <SplashStack />
+            ) : state.userToken == null ? (
+              <AuthStackScreen />
+            ) : (
+              <MainScreen />
+            )}
+          </AuthContext.Provider>
+        </ApolloProvider>
+      </Provider>
     </NavigationContainer>
   );
 };
