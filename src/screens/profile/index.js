@@ -12,14 +12,14 @@ import {IMAGES_RES} from '../../utils/images';
 import Touchable from '../../components/touchable';
 import Icon from 'react-native-vector-icons/Entypo';
 import {Colors} from '../../styles';
-import {useSelector} from 'react-redux';
-import {selectUser} from '../../store/slices/userSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {selectUser, setSignOut} from '../../store/slices/userSlice';
 import {selectLevel} from '../../store/slices/levelSlice';
 
 const ProfileScreen = ({navigation}) => {
   // get user data from redux
   const {userData} = useSelector(selectUser);
-  const {level} = useSelector(selectLevel);
+  const dispatch = useDispatch();
 
   // config other menus
   const OTHER_MENU = [
@@ -96,7 +96,9 @@ const ProfileScreen = ({navigation}) => {
             </Touchable>
           );
         })}
-        <Touchable style={styles.logoutButton}>
+        <Touchable
+          style={styles.logoutButton}
+          onPress={() => dispatch(setSignOut())}>
           <Text style={styles.textButtonLogout}>Keluar</Text>
         </Touchable>
       </View>
