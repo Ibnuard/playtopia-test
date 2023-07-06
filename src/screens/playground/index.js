@@ -4,6 +4,7 @@ import styles from './styles';
 import {BottomSheet, Card, Row, SearchBar} from '../../components';
 import Touchable from '../../components/touchable';
 import {IMAGES_RES} from '../../utils/images';
+import {BuyTicketModal} from '../../components/bottomsheet/model';
 
 const PlaygroundScreen = () => {
   const [modalVisible, setModalVisible] = React.useState(false);
@@ -33,9 +34,7 @@ const PlaygroundScreen = () => {
         visible={modalVisible}
         onBackButtonPress={() => setModalVisible(false)}
         onSwipeDone={() => setModalVisible(false)}>
-        <View style={{height: 200}}>
-          <Text>Hola</Text>
-        </View>
+        <BuyTicketModal />
       </BottomSheet>
     );
   };
