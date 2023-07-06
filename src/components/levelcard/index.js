@@ -28,7 +28,7 @@ const LevelCard = ({style, type = 'small', onPress, data, user, level}) => {
           <Row>
             <View style={styles.childLeft}>
               <Image source={IMAGES_RES.playcardLogo} />
-              <Image source={IMAGES_RES.badge.bronze} style={styles.badge} />
+              <Image source={IMAGES_RES.badge['BRONZE']} style={styles.badge} />
             </View>
             <Row>
               <Text style={styles.textPlayCount}>40 PLAYMILES</Text>
@@ -70,7 +70,7 @@ const LevelCard = ({style, type = 'small', onPress, data, user, level}) => {
         <OrnamentSmall style={styles.ornamentSmall} color={COLOR_THEME.badge} />
         <Row>
           <View style={styles.largeTopLeft}>
-            <Image source={IMAGES_RES.badge[level.type]} />
+            <Image source={IMAGES_RES.badge[level?.type ?? 'BRONZE']} />
           </View>
           <Text style={[styles.textPlayCountLarge, {color: COLOR_THEME.text}]}>
             40 PLAYMILES

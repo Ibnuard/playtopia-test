@@ -14,10 +14,12 @@ import Icon from 'react-native-vector-icons/Entypo';
 import {Colors} from '../../styles';
 import {useSelector} from 'react-redux';
 import {selectUser} from '../../store/slices/userSlice';
+import {selectLevel} from '../../store/slices/levelSlice';
 
 const ProfileScreen = ({navigation}) => {
   // get user data from redux
   const {userData} = useSelector(selectUser);
+  const {level} = useSelector(selectLevel);
 
   // config other menus
   const OTHER_MENU = [

@@ -5,8 +5,12 @@ import {useFocusEffect} from '@react-navigation/native';
 import {BackButton, Button, Card, LevelCard} from '../../components';
 import {Colors} from '../../styles';
 import {IMAGES_RES} from '../../utils/images';
+import {useSelector} from 'react-redux';
+import {selectUser} from '../../store/slices/userSlice';
 
 const PlayCardQRScreen = ({navigation}) => {
+  // gte user data from redux
+  const {userData} = useSelector(selectUser);
   // show exit button on header
   useFocusEffect(
     React.useCallback(() => {
@@ -36,7 +40,7 @@ const PlayCardQRScreen = ({navigation}) => {
           </Text>
           <Image source={IMAGES_RES.exampleQR} />
         </Card>
-        <LevelCard style={styles.levelCard} type="large" />
+        <LevelCard style={styles.levelCard} type="large" user={userData} />
         {_renderBottomContainer()}
       </View>
     );
