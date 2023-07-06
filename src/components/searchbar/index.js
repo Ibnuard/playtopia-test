@@ -9,13 +9,16 @@ import Touchable from '../touchable';
 
 const SearchBar = props => {
   return (
-    <View style={[styles.container, props.containerStyle]}>
+    <Touchable
+      style={[styles.container, props.containerStyle]}
+      onPress={props.onPress}>
       <Row>
         <View style={styles.inputLeft}>
           <Icon name="search1" color={Colors.COLOR_DARK_GRAY} size={20} />
         </View>
         <TextInput
           {...props}
+          editable={!props.onPress}
           placeholderTextColor={Colors.COLOR_DARK_GRAY}
           style={styles.input}
         />
@@ -23,7 +26,7 @@ const SearchBar = props => {
           <Image source={IMAGES_RES.searchPlus} />
         </Touchable>
       </Row>
-    </View>
+    </Touchable>
   );
 };
 

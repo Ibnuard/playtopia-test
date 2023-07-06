@@ -16,7 +16,7 @@ import {ALL_CITIES_QUERY} from '../../api/queries';
 import {useSelector} from 'react-redux';
 import {selectUser} from '../../store/slices/userSlice';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   // fetch all cities
   const {loading, data} = useQuery(ALL_CITIES_QUERY);
 
@@ -96,6 +96,7 @@ const HomeScreen = () => {
           <SearchBar
             placeholder={'Cari Lokasi Bermain'}
             containerStyle={styles.searchBar}
+            onPress={() => navigation.navigate('Playground')}
           />
           <Row style={styles.dividerContainer}>
             <View style={styles.divider} />

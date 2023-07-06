@@ -9,6 +9,7 @@ import {Colors, Typo} from '../styles';
 import PlayCardScreen from '../screens/playcard';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 import PlayCardQRScreen from '../screens/playcardqr';
+import PlaygroundScreen from '../screens/playground';
 
 // create stack screen
 const Stack = createNativeStackNavigator();
@@ -134,6 +135,14 @@ const HomeStack = () => {
         component={HomeScreen}
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Playground"
+        component={PlaygroundScreen}
+        options={{
+          title: '',
+          headerShadowVisible: false,
         }}
       />
     </Stack.Navigator>

@@ -43,6 +43,7 @@ export const IMAGES_RES = {
   button: {
     back: require('../../assets/images/back.png'),
     exit: require('../../assets/images/exit.png'),
+    filter: require('../../assets/images/ic_filter.png'),
   },
   playcardBackground: require('../../assets/images/playCardBg.png'),
   lockIcon: require('../../assets/images/ic_lock.png'),
