@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors, Size, Typo} from '../../styles';
+import {Colors, Scaler, Size, Typo} from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,6 +18,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: Size.SIZE_10,
     borderRadius: 14,
     marginTop: Size.SIZE_12,
+  },
+
+  cityListContainer: {
+    marginTop: Size.SIZE_12,
+  },
+
+  citiesList: {
+    paddingBottom: Scaler.scaleSize(60),
   },
 
   // text
