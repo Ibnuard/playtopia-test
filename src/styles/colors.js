@@ -2,6 +2,7 @@
 export const COLOR_PRIMARY = '#00ADEE';
 export const COLOR_SECONDARY = '#EB008B';
 export const COLOR_PRIMARY_50 = '#E5F8FF';
+export const COLOR_PRIMARY_80 = '#8ADFFF';
 
 //BASIC COLOR
 export const COLOR_WHITE = '#FFFFFF';

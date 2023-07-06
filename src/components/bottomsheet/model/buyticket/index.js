@@ -7,6 +7,7 @@ import {Colors} from '../../../../styles';
 import Row from '../../../row';
 import CustomSwitch from '../../../switch';
 import Button from '../../../button';
+import Counter from '../../../counter';
 
 const BuyTicketModal = () => {
   // handle if toggle gift switch
@@ -24,7 +25,7 @@ const BuyTicketModal = () => {
         <Icon name="close" size={24} color={Colors.COLOR_BLACK} />
       </Touchable>
       <View style={styles.content}>
-        <Text style={styles.textTitle}>Title</Text>
+        <Text style={styles.textTitle}>Beli Tiket</Text>
         <Row style={styles.rowDate}>
           <Text style={styles.textSelectDate}>Pilih tanggal</Text>
           <Touchable>
@@ -45,6 +46,7 @@ const BuyTicketModal = () => {
             onValueChange={() => toggleGroupSwitch()}
           />
         </Row>
+        <Counter />
         <Button type="secondary" title="Lanjutkan" />
       </View>
     </View>

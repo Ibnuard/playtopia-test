@@ -16,6 +16,7 @@ import InfoLevelCard from './infolevelcard';
 import FeatureCard from './featurecard';
 import BottomSheet from './bottomsheet';
 import CustomSwitch from './switch';
+import Counter from './counter';
 
 export {
   Button,
@@ -36,4 +37,5 @@ export {
   FeatureCard,
   BottomSheet,
   CustomSwitch,
+  Counter,
 };
