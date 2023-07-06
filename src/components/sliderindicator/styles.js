@@ -27,15 +27,15 @@ const styles = StyleSheet.create({
   },
 
   dotCircle: {
-    height: Size.SIZE_10,
-    width: Size.SIZE_10,
+    height: Size.SIZE_8,
+    width: Size.SIZE_8,
     marginHorizontal: 2,
     borderRadius: 5,
-    backgroundColor: Colors.COLOR_GRAY,
+    backgroundColor: Colors.COLOR_LIGHT_GRAY,
   },
 
   dotCircleActive: {
-    height: Size.SIZE_10,
+    height: Size.SIZE_8,
     width: Size.SIZE_18,
     marginHorizontal: 2,
     borderRadius: 5,
