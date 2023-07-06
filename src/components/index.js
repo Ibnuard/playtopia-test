@@ -17,6 +17,7 @@ import FeatureCard from './featurecard';
 import BottomSheet from './bottomsheet';
 import CustomSwitch from './switch';
 import Counter from './counter';
+import DateCard from './datecard';
 
 export {
   Button,
@@ -38,4 +39,5 @@ export {
   BottomSheet,
   CustomSwitch,
   Counter,
+  DateCard,
 };
