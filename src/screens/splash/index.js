@@ -4,10 +4,12 @@ import {AuthContext} from '../../context';
 import {retrieveData} from '../../utils/store';
 import {wait} from '../../utils/utils';
 import styles from './styles';
+import {useDispatch} from 'react-redux';
+import {setRestoreToken} from '../../store/slices/userSlice';
 
 const SplashScreen = () => {
-  const {restoreToken} = React.useContext(AuthContext);
-
+  // call redux dispatch
+  const dispatch = useDispatch();
   React.useEffect(() => {
     // Fetch the token from storage then navigate to our appropriate place
     const bootstrapAsync = async () => {
@@ -23,7 +25,7 @@ const SplashScreen = () => {
 
       // This will switch to the App screen or Auth screen and this loading
       // screen will be unmounted and thrown away.
-      restoreToken(userToken);
+      dispatch(setRestoreToken({token: userToken}));
     };
     wait(2500).then(() => bootstrapAsync());
   }, []);
