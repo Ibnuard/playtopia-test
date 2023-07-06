@@ -15,6 +15,7 @@ const App = () => {
     cache: new InMemoryCache(),
   });
 
+  // get current state from redux
   const {token, loading} = useSelector(selectUser);
 
   return (

@@ -12,8 +12,13 @@ import {IMAGES_RES} from '../../utils/images';
 import Touchable from '../../components/touchable';
 import Icon from 'react-native-vector-icons/Entypo';
 import {Colors} from '../../styles';
+import {useSelector} from 'react-redux';
+import {selectUser} from '../../store/slices/userSlice';
 
 const ProfileScreen = ({navigation}) => {
+  // get user data from redux
+  const {userData} = useSelector(selectUser);
+
   // config other menus
   const OTHER_MENU = [
     {
@@ -38,7 +43,7 @@ const ProfileScreen = ({navigation}) => {
   const _renderProfileCard = () => {
     return (
       <>
-        <ProfileCard />
+        <ProfileCard user={userData} />
       </>
     );
   };

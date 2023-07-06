@@ -11,7 +11,7 @@ import {
   SearchBar,
 } from '../../components';
 import Touchable from '../../components/touchable';
-import {useLazyQuery, useQuery} from '@apollo/client';
+import {useQuery} from '@apollo/client';
 import {ALL_CITIES_QUERY} from '../../api/queries';
 import {useSelector} from 'react-redux';
 import {selectUser} from '../../store/slices/userSlice';
@@ -45,7 +45,7 @@ const HomeScreen = () => {
         <Row>
           <View style={styles.topNameContainer}>
             <Text style={styles.textHi}>Hi</Text>
-            <Text style={styles.textName}>Cameron Williamson</Text>
+            <Text style={styles.textName}>{userData.name}</Text>
           </View>
           <Touchable>
             <Image source={IMAGES_RES.notifIcon} style={styles.topNotifIcon} />

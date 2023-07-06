@@ -1,9 +1,8 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
 import {Button} from '../../components';
-import {AuthContext} from '../../context';
 import styles from './styles';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {setSignIn} from '../../store/slices/userSlice';
 
 const LoginScreen = ({navigation}) => {
@@ -15,6 +14,16 @@ const LoginScreen = ({navigation}) => {
       number_id: 123456,
       point: 1000,
       token: '1234token',
+      childs: [
+        {
+          name: 'Naura',
+          point: '100',
+        },
+        {
+          name: 'Hasna',
+          point: '200',
+        },
+      ],
     },
   };
 
